@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio
+*.opensdf
+*.sdf
+
+# cocos2d-x
+**/Debug.win32
+**/Release.win32
