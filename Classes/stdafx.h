@@ -1,5 +1,4 @@
-#ifndef __MAIN_H__
-#define __MAIN_H__
+#pragma once
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 
@@ -7,7 +6,6 @@
 #include <windows.h>
 #include <tchar.h>
 
-// C RunTime Header Files
+// cocos2d-x
+#include "cocos2d.h"
 #include "CCStdC.h"
-
-#endif    // __MAIN_H__
