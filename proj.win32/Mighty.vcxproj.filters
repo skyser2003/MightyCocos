@@ -25,6 +25,9 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{f1da3395-b8ec-455b-b74c-092654911c0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty\Card">
+      <UniqueIdentifier>{ebd9ee15-a58f-4305-a3d2-12ca77887601}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CardType.h">
+      <Filter>Mighty\Card</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
