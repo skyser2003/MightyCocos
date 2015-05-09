@@ -2,7 +2,7 @@
 
 namespace Mighty
 {
-	enum CardType
+	enum CardRank
 	{
 		// Club
 		CA,

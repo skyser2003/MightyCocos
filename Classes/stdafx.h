@@ -5,6 +5,7 @@
 // C++ Standard libraries
 #include <map>
 #include <memory>
+#include <vector>
 
 // Windows Header Files
 #include <windows.h>

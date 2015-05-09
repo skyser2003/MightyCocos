@@ -28,6 +28,9 @@
     <Filter Include="Mighty\Card">
       <UniqueIdentifier>{ebd9ee15-a58f-4305-a3d2-12ca77887601}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty\Card\CardFunction">
+      <UniqueIdentifier>{f313b858-7e13-470c-9cbb-d2b3c5636f88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,14 +45,26 @@
     <ClCompile Include="..\Classes\stdafx.cpp">
       <Filter>PCH</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HumanPlayer.cpp">
-      <Filter>Mighty\Player</Filter>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Card.cpp">
+      <Filter>Mighty\Card</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AbstractPlayer.cpp">
       <Filter>Mighty\Player</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Scene</Filter>
+    <ClCompile Include="..\Classes\HumanPlayer.cpp">
+      <Filter>Mighty\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AbstractCardFunction.cpp">
+      <Filter>Mighty\Card\CardFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CardFunctionNormal.cpp">
+      <Filter>Mighty\Card\CardFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CardUtilFunction.cpp">
+      <Filter>Mighty\Card</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,16 +77,31 @@
     <ClInclude Include="..\Classes\stdafx.h">
       <Filter>PCH</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HumanPlayer.h">
-      <Filter>Mighty\Player</Filter>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Card.h">
+      <Filter>Mighty\Card</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AbstractPlayer.h">
       <Filter>Mighty\Player</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>Scene</Filter>
+    <ClInclude Include="..\Classes\HumanPlayer.h">
+      <Filter>Mighty\Player</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CardType.h">
+    <ClInclude Include="..\Classes\CardFunctionNormal.h">
+      <Filter>Mighty\Card\CardFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AbstractCardFunction.h">
+      <Filter>Mighty\Card\CardFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CardUtilFunction.h">
+      <Filter>Mighty\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CardRank.h">
+      <Filter>Mighty\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CardSuit.h">
       <Filter>Mighty\Card</Filter>
     </ClInclude>
   </ItemGroup>

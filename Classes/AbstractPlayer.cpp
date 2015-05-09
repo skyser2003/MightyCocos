@@ -3,6 +3,16 @@
 
 namespace Mighty
 {
+	void AbstractPlayer::SetGame(std::shared_ptr<Game> game)
+	{
+		this->game = game;
+	}
+
+	std::shared_ptr<Game> AbstractPlayer::GetGame() const
+	{
+		return game;
+	}
+
 	int AbstractPlayer::GetID() const
 	{
 		return id;
