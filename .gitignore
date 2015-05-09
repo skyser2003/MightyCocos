@@ -30,6 +30,9 @@
 # Visual Studio
 *.opensdf
 *.sdf
+*.tlog
+*.lastbuildstate
+*.ipch
 
 # cocos2d-x
 **/Debug.win32
