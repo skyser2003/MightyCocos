@@ -10,8 +10,17 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty">
+      <UniqueIdentifier>{be71e67e-a666-4208-92f8-45dabb7e0baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mighty\Game">
+      <UniqueIdentifier>{53dab6bc-cb79-4193-a558-34d03d088b17}</UniqueIdentifier>
+    </Filter>
     <Filter Include="PCH">
       <UniqueIdentifier>{002ae4a8-200d-49ce-85d0-d3988f52e42a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mighty\Player">
+      <UniqueIdentifier>{2d45c15b-2a27-411b-bd81-a793f496b24f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,8 +33,17 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game.cpp">
+      <Filter>Mighty\Game</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\stdafx.cpp">
       <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HumanPlayer.cpp">
+      <Filter>Mighty\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AbstractPlayer.cpp">
+      <Filter>Mighty\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -35,8 +53,17 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Game.h">
+      <Filter>Mighty\Game</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\stdafx.h">
       <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HumanPlayer.h">
+      <Filter>Mighty\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AbstractPlayer.h">
+      <Filter>Mighty\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

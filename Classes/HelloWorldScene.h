@@ -1,6 +1,11 @@
 #ifndef __HELLOWORLD_SCENE_H__
 #define __HELLOWORLD_SCENE_H__
 
+namespace Mighty
+{
+	class Game;
+}
+
 class HelloWorld : public cocos2d::Layer
 {
 public:
@@ -15,6 +20,8 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+private:
+	std::shared_ptr<Mighty::Game> game;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

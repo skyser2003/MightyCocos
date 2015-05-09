@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "HelloWorldScene.h"
 
+#include "Game.h"
+#include "AbstractPlayer.h"
+
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -27,6 +30,10 @@ bool HelloWorld::init()
     {
         return false;
     }
+
+	// Init game
+	game.reset(new Mighty::Game());
+	game->Init();
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -48,6 +55,24 @@ bool HelloWorld::init()
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
+
+	for (const auto& pair : game->GetPlayers())
+	{
+		auto player = pair.second;
+
+		auto closeItem = MenuItemImage::create(
+			"CloseNormal.png",
+			"CloseSelected.png",
+			CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+
+		closeItem->setPosition(Vec2((player->GetID() + 0.5f) * closeItem->getContentSize().width,
+			origin.y + closeItem->getContentSize().height / 2));
+
+		// create menu, it's an autorelease object
+		auto menu = Menu::create(closeItem, NULL);
+		menu->setPosition(Vec2::ZERO);
+		this->addChild(menu, 1);
+	}
 
     /////////////////////////////
     // 3. add your codes below...
