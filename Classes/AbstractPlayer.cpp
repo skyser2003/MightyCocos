@@ -3,6 +3,13 @@
 
 namespace Mighty
 {
+	void AbstractPlayer::ReceiveMsg(CardMessage msg, Card* sender)
+	{
+		for (auto card : cardList)
+		{
+		}
+	}
+
 	void AbstractPlayer::SetGame(std::shared_ptr<Game> game)
 	{
 		this->game = game;

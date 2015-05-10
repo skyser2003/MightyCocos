@@ -104,6 +104,9 @@
     <ClInclude Include="..\Classes\CardSuit.h">
       <Filter>Mighty\Card</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\CardMessage.h">
+      <Filter>Mighty\Card</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

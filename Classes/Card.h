@@ -2,6 +2,7 @@
 
 namespace Mighty
 {
+	enum CardSuit;
 	enum CardRank;
 
 	class AbstractPlayer;
@@ -13,7 +14,9 @@ namespace Mighty
 		void Init(AbstractPlayer* player, CardRank rank);
 
 		void AddCardFunction(std::shared_ptr<AbstractCardFunction> cardFunc);
+		bool IsPlayable(CardSuit currentSuit) const;
 
+		CardSuit GetSuit() const;
 		CardRank GetRank() const;
 		AbstractPlayer* GetPlayer() const;
 

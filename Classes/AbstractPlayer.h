@@ -2,12 +2,17 @@
 
 namespace Mighty
 {
+	enum CardMessage;
+
 	class Game;
+	class Card;
 
 	class AbstractPlayer
 	{
 	public:
 		virtual void PlayTurn() = 0;
+
+		void ReceiveMsg(CardMessage msg, Card* sender);
 
 		void SetGame(std::shared_ptr<Game> game);
 
@@ -23,5 +28,7 @@ namespace Mighty
 
 		int id;
 		std::string name;
+
+		std::vector<std::shared_ptr<Card>> cardList;
 	};
 }

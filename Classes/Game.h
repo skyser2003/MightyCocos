@@ -2,7 +2,10 @@
 
 namespace Mighty
 {
+	enum CardMessage;
+
 	class AbstractPlayer;
+	class Card;
 
 	class Game
 	{
@@ -12,6 +15,8 @@ namespace Mighty
 	public:
 		void Init();
 		void Destroy();
+
+		void BroadcastMsg(CardMessage msg, Card* sender);
 
 		void AddPlayer(std::shared_ptr<AbstractPlayer> player);
 

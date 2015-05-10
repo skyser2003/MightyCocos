@@ -8,5 +8,6 @@ namespace Mighty
 	{
 	public:
 		virtual void OnActivate(bool isFirstCard) override;
+		virtual bool IsPlayable(CardSuit currentSuit) override;
 	};
 }
