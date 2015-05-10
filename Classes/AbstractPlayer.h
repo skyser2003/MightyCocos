@@ -12,8 +12,6 @@ namespace Mighty
 	public:
 		virtual void PlayTurn() = 0;
 
-		void ReceiveMsg(CardMessage msg, Card* sender);
-
 		void SetGame(std::shared_ptr<Game> game);
 
 		std::shared_ptr<Game> GetGame() const;

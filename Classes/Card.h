@@ -4,6 +4,7 @@ namespace Mighty
 {
 	enum CardSuit;
 	enum CardRank;
+	enum CardRole;
 
 	class AbstractPlayer;
 	class AbstractCardFunction;
@@ -22,6 +23,7 @@ namespace Mighty
 
 	private:
 		CardRank rank;
+		CardRole role;
 
 		AbstractPlayer* player = nullptr;
 		std::vector<std::shared_ptr<AbstractCardFunction>> cardFuncList;

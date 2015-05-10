@@ -28,9 +28,6 @@
     <Filter Include="Mighty\Card">
       <UniqueIdentifier>{ebd9ee15-a58f-4305-a3d2-12ca77887601}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mighty\Card\CardFunction">
-      <UniqueIdentifier>{f313b858-7e13-470c-9cbb-d2b3c5636f88}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mighty\Round">
       <UniqueIdentifier>{b6a1cd14-c679-49c3-b8cc-af6e280f71bb}</UniqueIdentifier>
     </Filter>
@@ -59,12 +56,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\HumanPlayer.cpp">
       <Filter>Mighty\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AbstractCardFunction.cpp">
-      <Filter>Mighty\Card\CardFunction</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CardFunctionNormal.cpp">
-      <Filter>Mighty\Card\CardFunction</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CardUtilFunction.cpp">
       <Filter>Mighty\Card</Filter>
@@ -95,12 +86,6 @@
     <ClInclude Include="..\Classes\HumanPlayer.h">
       <Filter>Mighty\Player</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CardFunctionNormal.h">
-      <Filter>Mighty\Card\CardFunction</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AbstractCardFunction.h">
-      <Filter>Mighty\Card\CardFunction</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\CardUtilFunction.h">
       <Filter>Mighty\Card</Filter>
     </ClInclude>
@@ -115,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Round.h">
       <Filter>Mighty\Round</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CardRole.h">
+      <Filter>Mighty\Card</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

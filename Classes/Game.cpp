@@ -23,15 +23,6 @@ namespace Mighty
 		players.clear();
 	}
 
-	void Game::BroadcastMsg(CardMessage msg, Card* sender)
-	{
-		for (auto pair : players)
-		{
-			auto player = pair.second;
-			player->ReceiveMsg(msg, sender);
-		}
-	}
-
 	void Game::AddPlayer(std::shared_ptr<AbstractPlayer> player)
 	{
 		if (players.count(player->GetID()) != 0)

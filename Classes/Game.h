@@ -16,8 +16,6 @@ namespace Mighty
 		void Init();
 		void Destroy();
 
-		void BroadcastMsg(CardMessage msg, Card* sender);
-
 		void AddPlayer(std::shared_ptr<AbstractPlayer> player);
 
 		const Players& GetPlayers() const;

@@ -2,7 +2,6 @@
 #include "Card.h"
 
 #include "CardUtilFunction.h"
-#include "AbstractCardFunction.h"
 
 namespace Mighty
 {
@@ -20,15 +19,6 @@ namespace Mighty
 	bool Card::IsPlayable(CardSuit currentSuit) const
 	{
 		bool isPlayable = true;
-
-		for (auto cardFunc : cardFuncList)
-		{
-			if (cardFunc->IsPlayable(currentSuit) == false)
-			{
-				isPlayable = false;
-				break;
-			}
-		}
 
 		return isPlayable;
 	}
