@@ -31,6 +31,9 @@
     <Filter Include="Mighty\Card\CardFunction">
       <UniqueIdentifier>{f313b858-7e13-470c-9cbb-d2b3c5636f88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty\Round">
+      <UniqueIdentifier>{b6a1cd14-c679-49c3-b8cc-af6e280f71bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\CardUtilFunction.cpp">
       <Filter>Mighty\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Round.cpp">
+      <Filter>Mighty\Round</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CardMessage.h">
       <Filter>Mighty\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Round.h">
+      <Filter>Mighty\Round</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

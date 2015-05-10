@@ -146,6 +146,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Game.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HumanPlayer.cpp" />
+    <ClCompile Include="..\Classes\Round.cpp" />
     <ClCompile Include="..\Classes\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -165,6 +166,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\HumanPlayer.h" />
     <ClInclude Include="..\Classes\AbstractPlayer.h" />
     <ClInclude Include="..\Classes\AbstractCardFunction.h" />
+    <ClInclude Include="..\Classes\Round.h" />
     <ClInclude Include="..\Classes\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
