@@ -31,6 +31,9 @@
     <Filter Include="Mighty\Round">
       <UniqueIdentifier>{b6a1cd14-c679-49c3-b8cc-af6e280f71bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty\Card\Role">
+      <UniqueIdentifier>{2688ba37-1d57-43e1-827f-0f48c64e47f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,24 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Round.cpp">
       <Filter>Mighty\Round</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\NormalRole.cpp">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AbstractRole.cpp">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CardRole.cpp">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JokerRole.cpp">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JokerCallRole.cpp">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MightyRole.cpp">
+      <Filter>Mighty\Card\Role</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +123,25 @@
       <Filter>Mighty\Round</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CardRole.h">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AbstractRole.h">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\NormalRole.h">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Header.h">
       <Filter>Mighty\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JokerRole.h">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JokerCallRole.h">
+      <Filter>Mighty\Card\Role</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MightyRole.h">
+      <Filter>Mighty\Card\Role</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

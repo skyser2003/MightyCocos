@@ -2,6 +2,7 @@
 #include "Card.h"
 
 #include "CardUtilFunction.h"
+#include "AbstractRole.h"
 
 namespace Mighty
 {
@@ -9,18 +10,12 @@ namespace Mighty
 	{
 		this->player = player;
 		this->rank = rank;
+		role.reset();
 	}
 
-	void Card::AddCardFunction(std::shared_ptr<AbstractCardFunction> cardFunc)
+	bool Card::WinAgainst(std::shared_ptr<Card> otherCard)
 	{
-		cardFuncList.push_back(cardFunc);
-	}
-
-	bool Card::IsPlayable(CardSuit currentSuit) const
-	{
-		bool isPlayable = true;
-
-		return isPlayable;
+		return true;
 	}
 
 	CardSuit Card::GetSuit() const
@@ -36,5 +31,10 @@ namespace Mighty
 	AbstractPlayer* Card::GetPlayer() const
 	{
 		return player;
+	}
+
+	CardRole Card::GetRoleType() const
+	{
+		return role->GetRoleType();
 	}
 }
