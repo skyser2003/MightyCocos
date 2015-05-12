@@ -37,4 +37,9 @@ namespace Mighty
 	{
 		return role->GetRoleType();
 	}
+
+	AbstractRole* Card::GetRole() const
+	{
+		return role.get();
+	}
 }

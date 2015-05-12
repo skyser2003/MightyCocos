@@ -16,7 +16,7 @@ namespace Mighty
 			role->SetRole(GetRoleType<RoleClass>());
 		}
 
-	private:
+	protected:
 		AbstractRole();
 		
 	public:

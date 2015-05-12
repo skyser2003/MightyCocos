@@ -21,4 +21,6 @@ namespace Mighty
 		JB, // Black(Monotone)
 		JC = JB // Color
 	};
+
+	CardRank GetHigherRank(CardRank rank1, CardRank rank2);
 }

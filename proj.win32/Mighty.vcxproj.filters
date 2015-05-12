@@ -81,6 +81,9 @@
     <ClCompile Include="..\Classes\MightyRole.cpp">
       <Filter>Mighty\Card\Role</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CardRank.cpp">
+      <Filter>Mighty\Card</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">

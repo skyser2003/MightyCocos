@@ -2,7 +2,10 @@
 #include "Round.h"
 
 #include "CardSuit.h"
+#include "CardRank.h"
 #include "Card.h"
+#include "JokerRole.h"
+#include "JokerCallRole.h"
 
 namespace Mighty
 {
@@ -24,6 +27,7 @@ namespace Mighty
 			return mightyCard;
 		}
 
+		// Joker card wins most of the times, except when joker call is activated.
 		auto jokerCard = GetCard(cardList, Joker);
 		if (jokerCard != nullptr)
 		{
@@ -34,8 +38,65 @@ namespace Mighty
 			}
 			else
 			{
+				auto* jokerCallRole = static_cast<JokerCallRole*>(jokerCallCard->GetRole());
+				if (jokerCallRole->IsActivated() == false)
+				{
+					return jokerCard;
+				}
 			}
 		}
+
+		// Highest rank card in main suit wins.
+		auto highestMainCard = GetHighestRankCard(cardList, mainSuit);
+
+		if (highestMainCard != nullptr)
+		{
+			return highestMainCard;
+		}
+
+		// If there is no card with main suit, first card's main suit will be temporary main suit for this turn.
+		CardSuit tempMainSuit = None;
+		if (jokerCard == cardList[0])
+		{
+			auto* jokerRole = static_cast<JokerRole*>(jokerCard->GetRole());
+			tempMainSuit = jokerRole->GetSelectedSuit();
+		}
+		else
+		{
+			tempMainSuit = cardList[0]->GetSuit();
+		}
+
+		auto highestTempCard = GetHighestRankCard(cardList, tempMainSuit);
+
+		return highestTempCard;
+	}
+
+	std::shared_ptr<Card> Round::GetHighestRankCard(const CardList& cardList, CardSuit suit)
+	{
+		std::shared_ptr<Card> highestCard = nullptr;
+
+		for (const auto& card : cardList)
+		{
+			if (card->GetSuit() != suit)
+			{
+				continue;
+			}
+
+			if (highestCard == nullptr)
+			{
+				highestCard = card;
+			}
+			else
+			{
+				auto higherRank = GetHigherRank(highestCard->GetRank(), card->GetRank());
+				if (higherRank == card->GetRank())
+				{
+					highestCard = card;
+				}
+			}
+		}
+
+		return highestCard;
 	}
 
 	std::shared_ptr<Card> Round::GetCard(const CardList& cardList, CardRole roleType)

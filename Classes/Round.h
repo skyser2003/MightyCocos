@@ -16,6 +16,7 @@ namespace Mighty
 	public:
 		static std::shared_ptr<Card> CalculateWinningCard(CardSuit mainSuit, const CardList& cardList);
 		static std::shared_ptr<Card> GetCard(const CardList& cardList, CardRole roleType);
+		static std::shared_ptr<Card> GetHighestRankCard(const CardList& cardList, CardSuit suit);
 
 	public:
 		void Init();

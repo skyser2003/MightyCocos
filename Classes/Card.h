@@ -20,6 +20,7 @@ namespace Mighty
 		CardRank GetRank() const;
 		AbstractPlayer* GetPlayer() const;
 		CardRole GetRoleType() const;
+		AbstractRole* GetRole() const;
 
 	private:
 		CardSuit suit;
