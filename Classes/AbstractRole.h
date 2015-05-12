@@ -17,7 +17,7 @@ namespace Mighty
 		}
 
 	protected:
-		AbstractRole();
+		AbstractRole() {}
 		
 	public:
 		virtual ~AbstractRole() {}
