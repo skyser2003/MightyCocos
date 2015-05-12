@@ -1,14 +1,14 @@
 #include "stdafx.h"
 #include "Card.h"
 
-#include "CardUtilFunction.h"
 #include "AbstractRole.h"
 
 namespace Mighty
 {
-	void Card::Init(AbstractPlayer* player, CardRank rank)
+	void Card::Init(AbstractPlayer* player, CardSuit suit, CardRank rank)
 	{
 		this->player = player;
+		this->suit = suit;
 		this->rank = rank;
 		role.reset();
 	}
@@ -20,7 +20,7 @@ namespace Mighty
 
 	CardSuit Card::GetSuit() const
 	{
-		return Util::GetSuit(rank);
+		return suit;
 	}
 
 	CardRank Card::GetRank() const

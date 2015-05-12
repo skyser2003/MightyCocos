@@ -60,9 +60,6 @@
     <ClCompile Include="..\Classes\HumanPlayer.cpp">
       <Filter>Mighty\Player</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CardUtilFunction.cpp">
-      <Filter>Mighty\Card</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Round.cpp">
       <Filter>Mighty\Round</Filter>
     </ClCompile>
@@ -106,9 +103,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HumanPlayer.h">
       <Filter>Mighty\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CardUtilFunction.h">
-      <Filter>Mighty\Card</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CardRank.h">
       <Filter>Mighty\Card</Filter>

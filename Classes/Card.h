@@ -12,7 +12,7 @@ namespace Mighty
 	class Card final
 	{
 	public:
-		void Init(AbstractPlayer* player, CardRank rank);
+		void Init(AbstractPlayer* player, CardSuit suit, CardRank rank);
 
 		bool WinAgainst(std::shared_ptr<Card> otherCard);
 
@@ -22,6 +22,7 @@ namespace Mighty
 		CardRole GetRoleType() const;
 
 	private:
+		CardSuit suit;
 		CardRank rank;
 		std::unique_ptr<AbstractRole> role;
 

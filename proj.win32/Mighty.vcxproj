@@ -142,7 +142,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Card.cpp" />
     <ClCompile Include="..\Classes\CardRole.cpp" />
-    <ClCompile Include="..\Classes\CardUtilFunction.cpp" />
     <ClCompile Include="..\Classes\Game.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HumanPlayer.cpp" />
@@ -165,7 +164,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\CardMessage.h" />
     <ClInclude Include="..\Classes\CardRank.h" />
     <ClInclude Include="..\Classes\CardSuit.h" />
-    <ClInclude Include="..\Classes\CardUtilFunction.h" />
     <ClInclude Include="..\Classes\Game.h" />
     <ClInclude Include="..\Classes\Header.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
