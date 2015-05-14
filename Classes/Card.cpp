@@ -5,7 +5,17 @@
 
 namespace Mighty
 {
-	void Card::Init(AbstractPlayer* player, CardSuit suit, CardRank rank)
+	Card::Card()
+	{
+
+	}
+
+	Card::~Card()
+	{
+
+	}
+
+	void Card::Init(std::shared_ptr<AbstractPlayer> player, CardSuit suit, CardRank rank)
 	{
 		this->player = player;
 		this->suit = suit;
@@ -28,7 +38,7 @@ namespace Mighty
 		return rank;
 	}
 
-	AbstractPlayer* Card::GetPlayer() const
+	std::shared_ptr<AbstractPlayer> Card::GetPlayer() const
 	{
 		return player;
 	}

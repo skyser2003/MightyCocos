@@ -3,6 +3,16 @@
 
 namespace Mighty
 {
+	AbstractRole::AbstractRole()
+	{
+
+	}
+
+	AbstractRole::~AbstractRole()
+	{
+
+	}
+
 	void AbstractRole::SetCard(std::shared_ptr<Card> card)
 	{
 		this->card = card;

@@ -17,10 +17,10 @@ namespace Mighty
 		}
 
 	protected:
-		AbstractRole() {}
+		AbstractRole();
 		
 	public:
-		virtual ~AbstractRole() {}
+		virtual ~AbstractRole();
 
 		virtual bool WinAgainst(AbstractRole* otherRole) const = 0;
 

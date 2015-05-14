@@ -21,6 +21,10 @@ namespace Mighty
 		const Players& GetPlayers() const;
 
 	private:
+		void DistributeCard();
+
+		std::mt19937 gen;
+
 		Players players;
 	};
 }

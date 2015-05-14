@@ -3,9 +3,19 @@
 
 namespace Mighty
 {
+	AbstractPlayer::~AbstractPlayer()
+	{
+
+	}
+
 	void AbstractPlayer::SetGame(std::shared_ptr<Game> game)
 	{
 		this->game = game;
+	}
+
+	void AbstractPlayer::AddCard(std::shared_ptr<Card> card)
+	{
+		cardList.push_back(card);
 	}
 
 	std::shared_ptr<Game> AbstractPlayer::GetGame() const
