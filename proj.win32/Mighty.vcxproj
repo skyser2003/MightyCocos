@@ -141,6 +141,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\AbstractRole.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Card.cpp" />
+    <ClCompile Include="..\Classes\CardUtilFunc.cpp" />
     <ClCompile Include="..\Classes\CardRank.cpp" />
     <ClCompile Include="..\Classes\CardRole.cpp" />
     <ClCompile Include="..\Classes\Game.cpp" />
@@ -162,13 +163,14 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\AbstractRole.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Card.h" />
+    <ClInclude Include="..\Classes\CardUtilFunc.h" />
     <ClInclude Include="..\Classes\CardRole.h" />
     <ClInclude Include="..\Classes\CardMessage.h" />
     <ClInclude Include="..\Classes\CardRank.h" />
     <ClInclude Include="..\Classes\CardSuit.h" />
+    <ClInclude Include="..\Classes\CardType.h" />
     <ClInclude Include="..\Classes\Game.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
-    <ClInclude Include="..\Classes\Header.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HumanPlayer.h" />
     <ClInclude Include="..\Classes\AbstractPlayer.h" />

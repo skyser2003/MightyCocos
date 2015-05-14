@@ -2,8 +2,10 @@
 
 namespace Mighty
 {
-	enum CardRank
+	enum class CardRank
 	{
+		None,
+
 		Two,
 		Three,
 		Four,
@@ -17,9 +19,6 @@ namespace Mighty
 		Queen,
 		King,
 		Ace,
-
-		JB, // Black(Monotone)
-		JC = JB // Color
 	};
 
 	CardRank GetHigherRank(CardRank rank1, CardRank rank2);

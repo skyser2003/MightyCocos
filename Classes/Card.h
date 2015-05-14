@@ -2,8 +2,9 @@
 
 namespace Mighty
 {
-	enum CardSuit;
-	enum CardRank;
+	enum class CardType;
+	enum class CardSuit;
+	enum class CardRank;
 	enum CardRole;
 
 	class AbstractPlayer;
@@ -15,7 +16,7 @@ namespace Mighty
 		Card();
 		~Card();
 
-		void Init(std::shared_ptr<AbstractPlayer> player, CardSuit suit, CardRank rank);
+		void Init(std::shared_ptr<AbstractPlayer> player, CardType type);
 
 		bool WinAgainst(std::shared_ptr<Card> otherCard);
 
@@ -26,8 +27,7 @@ namespace Mighty
 		AbstractRole* GetRole() const;
 
 	private:
-		CardSuit suit;
-		CardRank rank;
+		CardType type;
 		std::unique_ptr<AbstractRole> role;
 
 		std::shared_ptr<AbstractPlayer> player;

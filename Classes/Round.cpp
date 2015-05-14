@@ -55,7 +55,7 @@ namespace Mighty
 		}
 
 		// If there is no card with main suit, first card's main suit will be temporary main suit for this turn.
-		CardSuit tempMainSuit = None;
+		auto tempMainSuit = CardSuit::None;
 		if (jokerCard == cardList[0])
 		{
 			auto* jokerRole = static_cast<JokerRole*>(jokerCard->GetRole());
@@ -119,14 +119,14 @@ namespace Mighty
 
 	void Round::Destroy()
 	{
-		mainSuit = None;
+		mainSuit = CardSuit::None;
 		currentWinningCard = nullptr;
 		cardList.clear();
 	}
 
 	void Round::PlayNextCard(std::shared_ptr<Card> nextCard)
 	{
-		if (mainSuit == None)
+		if (mainSuit == CardSuit::None)
 		{
 			// TODO : Joker can decide wanted suit
 			mainSuit = nextCard->GetSuit();

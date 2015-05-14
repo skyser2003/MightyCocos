@@ -22,6 +22,7 @@ namespace Mighty
 
 	private:
 		void DistributeCard();
+		void ApplyRole(Card* card);
 
 		std::mt19937 gen;
 

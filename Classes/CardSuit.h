@@ -2,9 +2,10 @@
 
 namespace Mighty
 {
-	enum CardSuit
+	enum class CardSuit
 	{
 		None,
+
 		Club,
 		Diamond,
 		Heart,

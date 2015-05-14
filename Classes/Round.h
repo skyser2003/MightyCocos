@@ -4,7 +4,7 @@
 
 namespace Mighty
 {
-	enum CardSuit;
+	enum class CardSuit;
 
 	class Card;
 

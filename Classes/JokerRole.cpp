@@ -7,7 +7,7 @@ namespace Mighty
 {
 	JokerRole::JokerRole()
 	{
-		SelectSuit(None);
+		SelectSuit(CardSuit::None);
 	}
 
 	bool JokerRole::WinAgainst(AbstractRole* otherRole) const

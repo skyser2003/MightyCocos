@@ -2,14 +2,13 @@
 #include "Game.h"
 
 #include "HumanPlayer.h"
-#include "CardSuit.h"
-#include "CardRank.h"
+#include "CardType.h"
 #include "Card.h"
 
 namespace Mighty
 {
-	enum CardSuit;
-	enum CardRank;
+	enum class CardSuit;
+	enum class CardRank;
 
 	void Game::Init()
 	{
@@ -50,32 +49,29 @@ namespace Mighty
 	void Game::DistributeCard()
 	{
 		// 53 Cards total : 4 suits * 13 ranks + 1 Joker
-		std::deque<std::pair<CardSuit, CardRank>> deck;
+		std::deque<CardType> deck;
 
-		// 4 suits * 13 ranks
-		for (CardSuit i = Club; i <= Spade; i = static_cast<CardSuit>(i + 1))
+		for (CardType i = CardType::C2; i <= CardType::JB; i = static_cast<CardType>(static_cast<int>(i) + 1))
 		{
-			for (CardRank j = Two; j <= Ace; j = static_cast<CardRank>(j + 1))
-			{
-				deck.push_back(std::make_pair(i, j));
-			}
+			deck.push_back(i);
 		}
-
-		// Joker
-		deck.push_back(std::make_pair(None, JB));
 
 		// Distribute 10 cards to each player, leave 3 cards for latter use.
 		for (int i = 0; i < 50; ++i)
 		{
 			int index = gen() % deck.size();
-			CardSuit suit = deck[index].first;
-			CardRank rank = deck[index].second;
+			CardType type = deck[index];
 			deck.erase(deck.begin() + index);
 
 			auto card = std::shared_ptr<Card>(new Card());
-			card->Init(players[i % 5], suit, rank);
+			card->Init(players[i % 5], type);
+			ApplyRole(card.get());
 
 			players[i % 5]->AddCard(card);
 		}
+	}
+
+	void Game::ApplyRole(Card* card)
+	{
 	}
 }
