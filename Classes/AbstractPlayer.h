@@ -9,6 +9,9 @@ namespace Mighty
 
 	class AbstractPlayer
 	{
+	private:
+		typedef std::vector<std::shared_ptr<Card>> CardList;
+
 	public:
 		~AbstractPlayer();
 
@@ -21,6 +24,7 @@ namespace Mighty
 		std::shared_ptr<Game> GetGame() const;
 		int GetID() const;
 		const std::string& GetName() const;
+		const CardList& GetCardList() const;
 
 	protected:
 		void SetBasicInfo(int id, const std::string& name);
@@ -31,6 +35,6 @@ namespace Mighty
 		int id;
 		std::string name;
 
-		std::vector<std::shared_ptr<Card>> cardList;
+		CardList cardList;
 	};
 }

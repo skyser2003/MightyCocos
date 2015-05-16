@@ -33,6 +33,11 @@ namespace Mighty
 		return name;
 	}
 
+	const AbstractPlayer::CardList& AbstractPlayer::GetCardList() const
+	{
+		return cardList;
+	}
+
 	void AbstractPlayer::SetBasicInfo(int id, const std::string& name)
 	{
 		this->id = id;

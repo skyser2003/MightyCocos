@@ -3,6 +3,8 @@
 
 #include "Game.h"
 #include "AbstractPlayer.h"
+#include "CardUtilFunc.h"
+#include "Card.h"
 
 USING_NS_CC;
 
@@ -60,16 +62,18 @@ bool GameScene::init()
 	{
 		auto player = pair.second;
 
-		auto closeItem = MenuItemImage::create(
-			"CloseNormal.png",
+		auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(player->GetCardList()[0]->GetType()) + ".png";
+
+		auto cardImage = MenuItemImage::create(
+			cardImageDir,
 			"CloseSelected.png",
 			CC_CALLBACK_1(GameScene::menuCloseCallback, this));
 
-		closeItem->setPosition(Vec2((player->GetID() + 0.5f) * closeItem->getContentSize().width,
-			origin.y + closeItem->getContentSize().height / 2));
+		cardImage->setPosition(Vec2((player->GetID() + 0.5f) * cardImage->getContentSize().width,
+			origin.y + cardImage->getContentSize().height / 2));
 
 		// create menu, it's an autorelease object
-		auto menu = Menu::create(closeItem, NULL);
+		auto menu = Menu::create(cardImage, NULL);
 		menu->setPosition(Vec2::ZERO);
 		this->addChild(menu, 1);
 	}

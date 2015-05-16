@@ -113,7 +113,7 @@ namespace Mighty
 			case CardType::H3:
 			case CardType::S3:
 			{
-				return CardRank::Two;
+				return CardRank::Three;
 			}
 			break;
 
@@ -122,7 +122,7 @@ namespace Mighty
 			case CardType::H4:
 			case CardType::S4:
 			{
-				return CardRank::Two;
+				return CardRank::Four;
 			}
 			break;
 
@@ -131,7 +131,7 @@ namespace Mighty
 			case CardType::H5:
 			case CardType::S5:
 			{
-				return CardRank::Two;
+				return CardRank::Five;
 			}
 			break;
 
@@ -140,7 +140,7 @@ namespace Mighty
 			case CardType::H6:
 			case CardType::S6:
 			{
-				return CardRank::Two;
+				return CardRank::Six;
 			}
 			break;
 
@@ -149,7 +149,7 @@ namespace Mighty
 			case CardType::H7:
 			case CardType::S7:
 			{
-				return CardRank::Two;
+				return CardRank::Seven;
 			}
 			break;
 
@@ -158,7 +158,7 @@ namespace Mighty
 			case CardType::H8:
 			case CardType::S8:
 			{
-				return CardRank::Two;
+				return CardRank::Eight;
 			}
 			break;
 
@@ -167,7 +167,7 @@ namespace Mighty
 			case CardType::H9:
 			case CardType::S9:
 			{
-				return CardRank::Two;
+				return CardRank::Nine;
 			}
 			break;
 
@@ -176,7 +176,7 @@ namespace Mighty
 			case CardType::H10:
 			case CardType::S10:
 			{
-				return CardRank::Two;
+				return CardRank::Ten;
 			}
 			break;
 
@@ -185,7 +185,7 @@ namespace Mighty
 			case CardType::HJ:
 			case CardType::SJ:
 			{
-				return CardRank::Two;
+				return CardRank::Jack;
 			}
 			break;
 
@@ -194,7 +194,7 @@ namespace Mighty
 			case CardType::HQ:
 			case CardType::SQ:
 			{
-				return CardRank::Two;
+				return CardRank::Queen;
 			}
 			break;
 
@@ -203,7 +203,7 @@ namespace Mighty
 			case CardType::HK:
 			case CardType::SK:
 			{
-				return CardRank::Two;
+				return CardRank::King;
 			}
 			break;
 
@@ -212,7 +212,7 @@ namespace Mighty
 			case CardType::HA:
 			case CardType::SA:
 			{
-				return CardRank::Two;
+				return CardRank::Ace;
 			}
 			break;
 
@@ -223,6 +223,141 @@ namespace Mighty
 				return CardRank::None;
 			}
 			}
+		}
+
+		std::string GetCardResourceName(CardType type)
+		{
+			switch (type)
+			{
+			case CardType::JB:
+			{
+				return "jb";
+			}
+			break;
+
+			case CardType::JC:
+			{
+				return "jr";
+			}
+			break;
+			}
+
+			CardSuit suit = GetSuit(type);
+			CardRank rank = GetRank(type);
+
+			std::string ret;
+
+			// Suit
+			switch (suit)
+			{
+			case CardSuit::Club:
+			{
+				ret = "c";
+			}
+			break;
+
+			case CardSuit::Diamond:
+			{
+				ret = "d";
+			}
+			break;
+
+			case CardSuit::Heart:
+			{
+				ret = "h";
+			}
+			break;
+
+			case CardSuit::Spade:
+			{
+				ret = "s";
+			}
+			break;
+			}
+
+			// Rank
+			switch (rank)
+			{
+			case CardRank::Ace:
+			{
+				ret += "a";
+			}
+			break;
+
+			case CardRank::Two:
+			{
+				ret += "2";
+			}
+			break;
+
+			case CardRank::Three:
+			{
+				ret += "3";
+			}
+			break;
+
+			case CardRank::Four:
+			{
+				ret += "4";
+			}
+			break;
+
+			case CardRank::Five:
+			{
+				ret += "5";
+			}
+			break;
+
+			case CardRank::Six:
+			{
+				ret += "6";
+			}
+			break;
+
+			case CardRank::Seven:
+			{
+				ret += "7";
+			}
+			break;
+
+			case CardRank::Eight:
+			{
+				ret += "8";
+			}
+			break;
+
+			case CardRank::Nine:
+			{
+				ret += "9";
+			}
+			break;
+
+			case CardRank::Ten:
+			{
+				ret += "10";
+			}
+			break;
+
+			case CardRank::Jack:
+			{
+				ret += "j";
+			}
+			break;
+
+			case CardRank::Queen:
+			{
+				ret += "q";
+			}
+			break;
+
+			case CardRank::King:
+			{
+				ret += "k";
+			}
+			break;
+			}
+
+			return ret;
 		}
 	}
 }

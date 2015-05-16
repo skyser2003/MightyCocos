@@ -10,5 +10,7 @@ namespace Mighty
 	{
 		CardSuit GetSuit(CardType type);
 		CardRank GetRank(CardType type);
+
+		std::string GetCardResourceName(CardType type);
 	}
 }
