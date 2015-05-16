@@ -280,7 +280,7 @@ namespace Mighty
 			{
 			case CardRank::Ace:
 			{
-				ret += "a";
+				ret += "1";
 			}
 			break;
 
