@@ -27,5 +27,6 @@ namespace Mighty
 		std::mt19937 gen;
 
 		Players players;
+		std::vector<std::shared_ptr<Card>> floorCards;
 	};
 }

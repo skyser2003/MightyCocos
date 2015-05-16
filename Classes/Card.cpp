@@ -28,6 +28,16 @@ namespace Mighty
 		return true;
 	}
 
+	void Card::SetRole(AbstractRole* role)
+	{
+		this->role.reset(role);
+	}
+
+	CardType Card::GetType() const
+	{
+		return type;
+	}
+
 	CardSuit Card::GetSuit() const
 	{
 		return Util::GetSuit(type);

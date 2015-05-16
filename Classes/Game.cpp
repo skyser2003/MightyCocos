@@ -5,6 +5,11 @@
 #include "CardType.h"
 #include "Card.h"
 
+#include "JokerRole.h"
+#include "JokerCallRole.h"
+#include "MightyRole.h"
+#include "NormalRole.h"
+
 namespace Mighty
 {
 	enum class CardSuit;
@@ -24,6 +29,8 @@ namespace Mighty
 
 			AddPlayer(player);
 		}
+
+		DistributeCard();
 	}
 
 	void Game::Destroy()
@@ -51,7 +58,7 @@ namespace Mighty
 		// 53 Cards total : 4 suits * 13 ranks + 1 Joker
 		std::deque<CardType> deck;
 
-		for (CardType i = CardType::C2; i <= CardType::JB; i = static_cast<CardType>(static_cast<int>(i) + 1))
+		for (CardType i = CardType::C2; i <= CardType::JB; i = static_cast<CardType>(static_cast<int>(i)+1))
 		{
 			deck.push_back(i);
 		}
@@ -69,9 +76,50 @@ namespace Mighty
 
 			players[i % 5]->AddCard(card);
 		}
+
+		for (int i = 0; i < deck.size(); ++i)
+		{
+			int index = gen() % deck.size();
+			CardType type = deck[index];
+
+			auto card = std::shared_ptr<Card>(new Card());
+			card->Init(players[i % 5], type);
+			ApplyRole(card.get());
+
+			floorCards.push_back(card);
+		}
+
+		deck.clear();
 	}
 
 	void Game::ApplyRole(Card* card)
 	{
+		switch (card->GetType())
+		{
+		case CardType::SA:
+		{
+			card->SetRole(new MightyRole());
+		}
+		break;
+
+		case CardType::JC:
+		case CardType::JB:
+		{
+			card->SetRole(new JokerRole());
+		}
+		break;
+
+		case CardType::C3:
+		{
+			card->SetRole(new JokerCallRole());
+		}
+		break;
+
+		default:
+		{
+			card->SetRole(new NormalRole());
+		}
+		break;
+		}
 	}
 }

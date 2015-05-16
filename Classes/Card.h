@@ -20,6 +20,9 @@ namespace Mighty
 
 		bool WinAgainst(std::shared_ptr<Card> otherCard);
 
+		void SetRole(AbstractRole* role);
+
+		CardType GetType() const;
 		CardSuit GetSuit() const;
 		CardRank GetRank() const;
 		std::shared_ptr<AbstractPlayer> GetPlayer() const;
