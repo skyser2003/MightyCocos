@@ -44,20 +44,29 @@ bool GameScene::init()
 	{
 		auto player = pair.second;
 
-		auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(player->GetCardList()[0]->GetType()) + ".png";
+		for (size_t i = 0; i < player->GetCardList().size(); ++i)
+		{
+			auto card = player->GetCardList()[i];
+			auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(card->GetType()) + ".png";
 
-		auto cardImage = MenuItemImage::create(
-			cardImageDir,
-			"CloseSelected.png",
-			CC_CALLBACK_1(GameScene::menuCloseCallback, this));
+			auto cardImage = MenuItemImage::create(
+				cardImageDir,
+				"CloseSelected.png",
+				CC_CALLBACK_1(GameScene::menuCloseCallback, this));
 
-		cardImage->setPosition(Vec2((player->GetID() + 0.5f) * cardImage->getContentSize().width,
-			origin.y + cardImage->getContentSize().height / 2));
+			float scale = 0.7f;
 
-		// create menu, it's an autorelease object
-		auto menu = Menu::create(cardImage, NULL);
-		menu->setPosition(Vec2::ZERO);
-		this->addChild(menu, 1);
+			cardImage->setPosition(Vec2((player->GetID() + i + 0.5f) * scale * cardImage->getContentSize().width,
+				origin.y + cardImage->getContentSize().height / 2 * scale));
+			cardImage->setScale(scale);
+
+			// create menu, it's an autorelease object
+			auto menu = Menu::create(cardImage, NULL);
+			menu->setPosition(Vec2::ZERO);
+			this->addChild(menu, 1);
+		}
+
+		break;
 	}
 
 	/////////////////////////////
