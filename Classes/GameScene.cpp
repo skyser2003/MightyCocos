@@ -99,10 +99,15 @@ bool GameScene::init()
 			auto card = player->GetCardList()[i];
 			auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(card->GetType()) + ".png";
 
+			auto cardClickCallback = [card](Ref* ref)
+			{
+				auto type = card->GetType();
+			};
+
 			auto cardImage = MenuItemImage::create(
 				cardImageDir,
 				"CloseSelected.png",
-				CC_CALLBACK_1(GameScene::menuCloseCallback, this));
+				cardClickCallback);
 
 			float scale = 0.7f;
 
