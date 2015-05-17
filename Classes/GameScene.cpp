@@ -42,7 +42,57 @@ bool GameScene::init()
 
 	for (const auto& pair : game->GetPlayers())
 	{
+		Vec2 standard = Director::getInstance()->getVisibleOrigin();
+		Vec2 direction;
+
 		auto player = pair.second;
+
+		switch (player->GetID())
+		{
+		case 0:
+		{
+			direction = Vec2(1.0f, 1.0f);
+		}
+		break;
+
+		case 1:
+		{
+			direction = Vec2(1.0f, 1.0f);
+		}
+		break;
+
+		case 2:
+		{
+			direction = Vec2(-1.0f, 1.0f);
+		}
+		break;
+
+		case 3:
+		{
+			direction = Vec2(-1.0f, -1.0f);
+		}
+		break;
+
+		case 4:
+		{
+			direction = Vec2(1.0f, -1.0f);
+		}
+		break;
+		}
+
+		if (direction.x == -1.0f)
+		{
+			standard.x = visibleSize.width;
+		}
+		if (direction.y == -1.0f)
+		{
+			standard.y = visibleSize.height;
+		}
+
+		if (player->GetID() == 1)
+		{
+			standard.x += visibleSize.width / 3;
+		}
 
 		for (size_t i = 0; i < player->GetCardList().size(); ++i)
 		{
@@ -56,8 +106,8 @@ bool GameScene::init()
 
 			float scale = 0.7f;
 
-			cardImage->setPosition(Vec2((player->GetID() + i + 0.5f) * scale * cardImage->getContentSize().width,
-				origin.y + cardImage->getContentSize().height / 2 * scale));
+			cardImage->setPosition(Vec2(standard.x + direction.x * (i + 0.5f) * scale * cardImage->getContentSize().width,
+				standard.y + direction.y * cardImage->getContentSize().height / 2 * scale));
 			cardImage->setScale(scale);
 
 			// create menu, it's an autorelease object
@@ -65,8 +115,6 @@ bool GameScene::init()
 			menu->setPosition(Vec2::ZERO);
 			this->addChild(menu, 1);
 		}
-
-		break;
 	}
 
 	/////////////////////////////
