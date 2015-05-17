@@ -17,7 +17,7 @@ public:
 
 	// a selector callback
 	void menuCloseCallback(cocos2d::Ref* pSender);
-	void cardClickCallback(std::shared_ptr<Mighty::Card> card);
+	void cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::Menu* menu);
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);

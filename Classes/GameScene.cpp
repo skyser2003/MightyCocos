@@ -100,15 +100,10 @@ bool GameScene::init()
 			auto card = player->GetCardList()[i];
 			auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(card->GetType()) + ".png";
 
-			auto callback = [this, card](Ref* ref)
-			{
-				cardClickCallback(card);
-			};
 
 			auto cardImage = MenuItemImage::create(
 				cardImageDir,
-				"CloseSelected.png",
-				callback);
+				"CloseSelected.png");
 
 			float scale = 0.7f;
 
@@ -120,6 +115,13 @@ bool GameScene::init()
 			auto menu = Menu::create(cardImage, NULL);
 			menu->setPosition(Vec2::ZERO);
 			this->addChild(menu, 1);
+
+			auto callback = [this, card, menu](Ref* ref)
+			{
+				cardClickCallback(card, menu);
+			};
+
+			cardImage->setCallback(callback);
 		}
 	}
 
@@ -150,7 +152,8 @@ void GameScene::menuCloseCallback(Ref* pSender)
 #endif
 }
 
-void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card)
+void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::Menu* menu)
 {
 	game->PlayCard(card);
+	removeChild(menu, true);
 }
