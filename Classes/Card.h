@@ -5,7 +5,7 @@ namespace Mighty
 	enum class CardType;
 	enum class CardSuit;
 	enum class CardRank;
-	enum CardRole;
+	enum class CardRole;
 
 	class AbstractPlayer;
 	class AbstractRole;

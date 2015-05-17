@@ -21,17 +21,17 @@ namespace Mighty
 		}
 
 		// Mighty card ALWAYS wins
-		auto mightyCard = GetCard(cardList, Mighty);
+		auto mightyCard = GetCard(cardList, CardRole::Mighty);
 		if (mightyCard != nullptr)
 		{
 			return mightyCard;
 		}
 
 		// Joker card wins most of the times, except when joker call is activated.
-		auto jokerCard = GetCard(cardList, Joker);
+		auto jokerCard = GetCard(cardList, CardRole::Joker);
 		if (jokerCard != nullptr)
 		{
-			auto jokerCallCard = GetCard(cardList, JokerCall);
+			auto jokerCallCard = GetCard(cardList, CardRole::JokerCall);
 			if (jokerCallCard == nullptr)
 			{
 				return jokerCard;
@@ -134,5 +134,20 @@ namespace Mighty
 
 		cardList.push_back(nextCard);
 		currentWinningCard = CalculateWinningCard(mainSuit, cardList);
+	}
+
+	bool Round::IsFinished() const
+	{
+		return cardList.size() == 5;
+	}
+
+	std::shared_ptr<Card> Round::GetCurrentWinningCard() const
+	{
+		return currentWinningCard;
+	}
+
+	const Round::CardList& Round::GetCurrentRoundCardList() const
+	{
+		return cardList;
 	}
 }

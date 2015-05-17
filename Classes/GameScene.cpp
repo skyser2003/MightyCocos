@@ -5,6 +5,7 @@
 #include "AbstractPlayer.h"
 #include "CardUtilFunc.h"
 #include "Card.h"
+#include "CardRole.h"
 
 USING_NS_CC;
 
@@ -99,15 +100,15 @@ bool GameScene::init()
 			auto card = player->GetCardList()[i];
 			auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(card->GetType()) + ".png";
 
-			auto cardClickCallback = [card](Ref* ref)
+			auto callback = [this, card](Ref* ref)
 			{
-				auto type = card->GetType();
+				cardClickCallback(card);
 			};
 
 			auto cardImage = MenuItemImage::create(
 				cardImageDir,
 				"CloseSelected.png",
-				cardClickCallback);
+				callback);
 
 			float scale = 0.7f;
 
@@ -140,7 +141,6 @@ bool GameScene::init()
 	return true;
 }
 
-
 void GameScene::menuCloseCallback(Ref* pSender)
 {
 	Director::getInstance()->end();
@@ -148,4 +148,9 @@ void GameScene::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 	exit(0);
 #endif
+}
+
+void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card)
+{
+	game->PlayCard(card);
 }

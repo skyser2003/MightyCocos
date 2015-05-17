@@ -20,8 +20,6 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
-private:
-	std::shared_ptr<Mighty::Game> game;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

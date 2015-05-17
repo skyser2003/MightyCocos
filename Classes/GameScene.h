@@ -3,6 +3,7 @@
 namespace Mighty
 {
 	class Game;
+	class Card;
 }
 
 class GameScene : public cocos2d::Layer
@@ -16,6 +17,7 @@ public:
 
 	// a selector callback
 	void menuCloseCallback(cocos2d::Ref* pSender);
+	void cardClickCallback(std::shared_ptr<Mighty::Card> card);
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);

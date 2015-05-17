@@ -6,24 +6,24 @@ namespace Mighty
 	template <>
 	CardRole GetRoleType<NormalRole>()
 	{
-		return Normal;
+		return CardRole::Normal;
 	}
 
 	template <>
 	CardRole GetRoleType<MightyRole>()
 	{
-		return Mighty;
+		return CardRole::Mighty;
 	}
 
 	template <>
 	CardRole GetRoleType<JokerRole>()
 	{
-		return Joker;
+		return CardRole::Joker;
 	}
 
 	template <>
 	CardRole GetRoleType<JokerCallRole>()
 	{
-		return JokerCall;
+		return CardRole::JokerCall;
 	}
 }

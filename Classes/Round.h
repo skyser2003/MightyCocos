@@ -23,6 +23,11 @@ namespace Mighty
 		void Destroy();
 
 		void PlayNextCard(std::shared_ptr<Card> nextCard);
+
+		bool IsFinished() const;
+		std::shared_ptr<Card> GetCurrentWinningCard() const;
+		const CardList& GetCurrentRoundCardList() const;
+
 	private:
 		CardSuit mainSuit;
 

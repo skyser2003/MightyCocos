@@ -7,7 +7,7 @@ namespace Mighty
 	class JokerRole;
 	class JokerCallRole;
 
-	enum CardRole
+	enum class CardRole
 	{
 		Normal,
 		Mighty,
@@ -23,28 +23,28 @@ namespace Mighty
 	class GetRoleClass;
 
 	template <>
-	class GetRoleClass < Normal >
+	class GetRoleClass < CardRole::Normal >
 	{
 	public:
 		typedef NormalRole Class;
 	};
 
 	template <>
-	class GetRoleClass < Mighty >
+	class GetRoleClass < CardRole::Mighty >
 	{
 	public:
 		typedef MightyRole Class;
 	};
 
 	template <>
-	class GetRoleClass < Joker >
+	class GetRoleClass < CardRole::Joker >
 	{
 	public:
 		typedef JokerRole Class;
 	};
 
 	template <>
-	class GetRoleClass < JokerCall >
+	class GetRoleClass < CardRole::JokerCall >
 	{
 	public:
 		typedef JokerCallRole Class;

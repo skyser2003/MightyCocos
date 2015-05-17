@@ -9,11 +9,22 @@
 #include "JokerCallRole.h"
 #include "MightyRole.h"
 #include "NormalRole.h"
+#include "Round.h"
 
 namespace Mighty
 {
 	enum class CardSuit;
 	enum class CardRank;
+
+	Game::Game()
+	{
+
+	}
+
+	Game::~Game()
+	{
+
+	}
 
 	void Game::Init()
 	{
@@ -46,6 +57,31 @@ namespace Mighty
 		}
 
 		players[player->GetID()] = player;
+	}
+
+	void Game::PlayCard(std::shared_ptr<Card> card)
+	{
+		if (round == nullptr)
+		{
+			StartNewRound();
+		}
+
+		round->PlayNextCard(card);
+
+		if (round->IsFinished() == true)
+		{
+			auto winCard = round->GetCurrentWinningCard();
+			auto player = winCard->GetPlayer();
+
+			auto cardList = round->GetCurrentRoundCardList();
+			for (const auto& card : cardList)
+			{
+
+			}
+
+			// Destroy round
+			round = nullptr;
+		}
 	}
 
 	const Game::Players& Game::GetPlayers() const
@@ -121,5 +157,11 @@ namespace Mighty
 		}
 		break;
 		}
+	}
+
+	void Game::StartNewRound()
+	{
+		round.reset(new Round());
+		round->Init();
 	}
 }
