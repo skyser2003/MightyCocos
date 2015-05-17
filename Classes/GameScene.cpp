@@ -36,7 +36,7 @@ bool GameScene::init()
 
 	// Init game
 	game.reset(new Mighty::Game());
-	game->Init();
+	game->Init(game);
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();

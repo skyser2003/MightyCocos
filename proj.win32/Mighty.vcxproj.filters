@@ -34,6 +34,9 @@
     <Filter Include="Mighty\Card\Role">
       <UniqueIdentifier>{2688ba37-1d57-43e1-827f-0f48c64e47f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty\Rule">
+      <UniqueIdentifier>{223944e2-957f-41ca-a779-31fcaa74d533}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -89,6 +92,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\CardUtilFunc.cpp">
       <Filter>Mighty\Card</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Rule.cpp">
+      <Filter>Mighty\Rule</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CardUtilFunc.h">
       <Filter>Mighty\Card</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Rule.h">
+      <Filter>Mighty\Rule</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

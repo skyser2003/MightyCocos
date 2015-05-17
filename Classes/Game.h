@@ -7,6 +7,7 @@ namespace Mighty
 	class AbstractPlayer;
 	class Card;
 	class Round;
+	class Rule;
 
 	class Game
 	{
@@ -17,13 +18,14 @@ namespace Mighty
 		Game();
 		~Game();
 
-		void Init();
+		void Init(std::weak_ptr<Game> self);
 		void Destroy();
 
 		void AddPlayer(std::shared_ptr<AbstractPlayer> player);
 		void PlayCard(std::shared_ptr<Card> card);
 
 		const Players& GetPlayers() const;
+		const Rule& GetRule() const;
 
 	private:
 		void DistributeCard();
@@ -32,8 +34,11 @@ namespace Mighty
 
 		std::mt19937 gen;
 
+		std::weak_ptr<Game> self;
+
 		Players players;
 		std::vector<std::shared_ptr<Card>> floorCards;
 		std::unique_ptr<Round> round;
+		std::unique_ptr<Rule> rule;
 	};
 }

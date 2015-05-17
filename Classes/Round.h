@@ -6,6 +6,7 @@ namespace Mighty
 {
 	enum class CardSuit;
 
+	class Game;
 	class Card;
 
 	class Round final
@@ -19,7 +20,7 @@ namespace Mighty
 		static std::shared_ptr<Card> GetHighestRankCard(const CardList& cardList, CardSuit suit);
 
 	public:
-		void Init();
+		void Init(std::weak_ptr<Game> game);
 		void Destroy();
 
 		void PlayNextCard(std::shared_ptr<Card> nextCard);
@@ -29,6 +30,7 @@ namespace Mighty
 		const CardList& GetCurrentRoundCardList() const;
 
 	private:
+		std::weak_ptr<Game> game;
 		CardSuit mainSuit;
 
 		std::shared_ptr<Card> currentWinningCard;

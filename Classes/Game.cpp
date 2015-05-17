@@ -10,6 +10,7 @@
 #include "MightyRole.h"
 #include "NormalRole.h"
 #include "Round.h"
+#include "Rule.h"
 
 namespace Mighty
 {
@@ -26,13 +27,18 @@ namespace Mighty
 
 	}
 
-	void Game::Init()
+	void Game::Init(std::weak_ptr<Game> self)
 	{
+		this->self = self;
+
+		rule.reset(new Rule());
+		rule->SetPlayerCount(5);
+
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch());
 		gen.seed(ms.count());
 
 		// Test
-		for (int i = 0; i < 5; ++i)
+		for (int i = 0; i < rule->GetPlayerCount(); ++i)
 		{
 			auto* human = new HumanPlayer();
 			human->Init(i, "boo" + i);
@@ -162,6 +168,11 @@ namespace Mighty
 	void Game::StartNewRound()
 	{
 		round.reset(new Round());
-		round->Init();
+		round->Init(self);
+	}
+
+	const Rule& Game::GetRule() const
+	{
+		return *rule.get();
 	}
 }

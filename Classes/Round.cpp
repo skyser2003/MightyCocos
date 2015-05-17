@@ -6,6 +6,8 @@
 #include "Card.h"
 #include "JokerRole.h"
 #include "JokerCallRole.h"
+#include "Game.h"
+#include "Rule.h"
 
 namespace Mighty
 {
@@ -112,9 +114,11 @@ namespace Mighty
 		return nullptr;
 	}
 
-	void Round::Init()
+	void Round::Init(std::weak_ptr<Game> game)
 	{
 		Destroy();
+
+		this->game = game;
 	}
 
 	void Round::Destroy()
@@ -138,7 +142,8 @@ namespace Mighty
 
 	bool Round::IsFinished() const
 	{
-		return cardList.size() == 5;
+		auto sharedGame = game.lock();
+		return cardList.size() == sharedGame->GetRule().GetPlayerCount();
 	}
 
 	std::shared_ptr<Card> Round::GetCurrentWinningCard() const
