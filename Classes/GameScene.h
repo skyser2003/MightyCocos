@@ -23,4 +23,5 @@ public:
 	CREATE_FUNC(GameScene);
 private:
 	std::shared_ptr<Mighty::Game> game;
+	float imageScale = 1.0f;
 };

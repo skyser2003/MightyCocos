@@ -26,6 +26,7 @@ namespace Mighty
 
 		const Players& GetPlayers() const;
 		const Rule& GetRule() const;
+		int GetCurrentRoundCardCount() const;
 
 	private:
 		void DistributeCard();

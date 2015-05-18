@@ -95,6 +95,16 @@ namespace Mighty
 		return players;
 	}
 
+	const Rule& Game::GetRule() const
+	{
+		return *rule.get();
+	}
+
+	int Game::GetCurrentRoundCardCount() const
+	{
+		return round == nullptr ? 0 : round->GetCurrentRoundCardList().size();
+	}
+
 	void Game::DistributeCard()
 	{
 		// 53 Cards total : 4 suits * 13 ranks + 1 Joker
@@ -169,10 +179,5 @@ namespace Mighty
 	{
 		round.reset(new Round());
 		round->Init(self);
-	}
-
-	const Rule& Game::GetRule() const
-	{
-		return *rule.get();
 	}
 }
