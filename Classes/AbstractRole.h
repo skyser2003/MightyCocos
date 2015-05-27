@@ -8,21 +8,11 @@ namespace Mighty
 
 	class AbstractRole
 	{
-	public:
-		template <class RoleClass>
-		static std::shared_ptr<AbstractRole> Create()
-		{
-			AbstractRole* role = new RoleClass();
-			role->SetRole(GetRoleType<RoleClass>());
-		}
-
 	protected:
 		AbstractRole();
 		
 	public:
 		virtual ~AbstractRole();
-
-		virtual bool WinAgainst(AbstractRole* otherRole) const = 0;
 
 		void SetCard(std::shared_ptr<Card> card);
 
@@ -30,10 +20,22 @@ namespace Mighty
 
 	protected:
 		CardRole roleType;
-
 		std::shared_ptr<Card> card;
 
-	private:
 		void SetRole(CardRole roleType);
+	};
+
+	template <class ChildClass>
+	class CRTPRole : public AbstractRole
+	{
+	protected:
+		CRTPRole()
+		{
+			SetRole(Mighty::GetRoleType<ChildClass>());
+		}
+
+		virtual ~CRTPRole()
+		{
+		}
 	};
 }

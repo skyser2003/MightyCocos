@@ -6,12 +6,10 @@ namespace Mighty
 {
 	enum class CardSuit;
 
-	class JokerRole final : public AbstractRole
+	class JokerRole final : public CRTPRole<JokerRole>
 	{
 	public:
 		JokerRole();
-
-		virtual bool WinAgainst(AbstractRole* otherRole) const;
 
 		void SelectSuit(CardSuit suit);
 

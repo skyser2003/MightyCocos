@@ -22,12 +22,7 @@ namespace Mighty
 		this->type = type;
 		role.reset();
 	}
-
-	bool Card::WinAgainst(std::shared_ptr<Card> otherCard)
-	{
-		return true;
-	}
-
+		
 	void Card::SetRole(AbstractRole* role)
 	{
 		this->role.reset(role);

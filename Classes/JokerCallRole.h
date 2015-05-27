@@ -4,11 +4,9 @@
 
 namespace Mighty
 {
-	class JokerCallRole final : public AbstractRole
+	class JokerCallRole final : public CRTPRole<JokerCallRole>
 	{
 	public:
-		virtual bool WinAgainst(AbstractRole* otherRole) const;
-
 		void SetIsActivated(bool isActivated);
 
 		bool IsActivated() const;

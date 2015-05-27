@@ -10,11 +10,6 @@ namespace Mighty
 		SelectSuit(CardSuit::None);
 	}
 
-	bool JokerRole::WinAgainst(AbstractRole* otherRole) const
-	{
-		return true;
-	}
-
 	void JokerRole::SelectSuit(CardSuit suit)
 	{
 		selectedSuit = suit;

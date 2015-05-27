@@ -18,8 +18,6 @@ namespace Mighty
 
 		void Init(std::shared_ptr<AbstractPlayer> player, CardType type);
 
-		bool WinAgainst(std::shared_ptr<Card> otherCard);
-
 		void SetRole(AbstractRole* role);
 
 		CardType GetType() const;

@@ -4,9 +4,8 @@
 
 namespace Mighty
 {
-	class NormalRole final : public AbstractRole
+	class NormalRole final : public CRTPRole<NormalRole>
 	{
 	public:
-		virtual bool WinAgainst(AbstractRole* otherRole) const;
 	};
 }
