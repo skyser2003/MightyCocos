@@ -13,6 +13,7 @@ namespace Mighty
 	{
 	private:
 		typedef std::map<int, std::shared_ptr<AbstractPlayer>> Players;
+		typedef std::vector<std::shared_ptr<Card>> CardList;
 
 	public:
 		Game();
@@ -23,22 +24,25 @@ namespace Mighty
 
 		void AddPlayer(std::shared_ptr<AbstractPlayer> player);
 		void PlayCard(std::shared_ptr<Card> card);
+		void StartNewRound();
+		bool IsRoundFinished() const;
 
 		const Players& GetPlayers() const;
 		const Rule& GetRule() const;
+		const CardList& GetCurrentRoundCardList() const;
 		int GetCurrentRoundCardCount() const;
+		std::shared_ptr<Card> GetWinningCard() const;
 
 	private:
 		void DistributeCard();
 		void ApplyRole(Card* card);
-		void StartNewRound();
 
 		std::mt19937 gen;
 
 		std::weak_ptr<Game> self;
 
 		Players players;
-		std::vector<std::shared_ptr<Card>> floorCards;
+		CardList floorCards;
 		std::unique_ptr<Round> round;
 		std::unique_ptr<Rule> rule;
 	};

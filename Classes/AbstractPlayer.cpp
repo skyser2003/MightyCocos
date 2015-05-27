@@ -15,7 +15,12 @@ namespace Mighty
 
 	void AbstractPlayer::AddCard(std::shared_ptr<Card> card)
 	{
-		cardList.push_back(card);
+		handCardList.push_back(card);
+	}
+
+	void AbstractPlayer::AddAcquiredCard(const CardList& acquiredCardList)
+	{
+		this->acquiredCardList.insert(this->acquiredCardList.begin(), acquiredCardList.begin(), acquiredCardList.end());
 	}
 
 	std::shared_ptr<Game> AbstractPlayer::GetGame() const
@@ -35,7 +40,7 @@ namespace Mighty
 
 	const AbstractPlayer::CardList& AbstractPlayer::GetCardList() const
 	{
-		return cardList;
+		return handCardList;
 	}
 
 	void AbstractPlayer::SetBasicInfo(int id, const std::string& name)

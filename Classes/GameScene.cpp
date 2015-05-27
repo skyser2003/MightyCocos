@@ -37,6 +37,7 @@ bool GameScene::init()
 	// Init game
 	game.reset(new Mighty::Game());
 	game->Init(game);
+	game->StartNewRound();
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -115,6 +116,8 @@ bool GameScene::init()
 			menu->setPosition(Vec2::ZERO);
 			this->addChild(menu, 1);
 
+			cardImageList.emplace(card->GetType(), menu);
+
 			auto callback = [this, card, menu](Ref* ref)
 			{
 				cardClickCallback(card, menu);
@@ -163,4 +166,23 @@ void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::M
 		);
 
 	game->PlayCard(card);
+
+	if (game->IsRoundFinished() == true)
+	{
+		// Logic
+		auto player = game->GetWinningCard()->GetPlayer();
+		const auto& cardList = game->GetCurrentRoundCardList();
+		
+		player->AddAcquiredCard(cardList);
+
+		// UI
+		for (const auto& card : cardList)
+		{
+			auto* menu = cardImageList[card->GetType()];
+			menu->setVisible(false);
+		}
+
+		// Begin next round
+		game->StartNewRound();
+	}
 }

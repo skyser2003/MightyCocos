@@ -18,8 +18,8 @@ namespace Mighty
 		virtual void PlayTurn() = 0;
 
 		void SetGame(std::shared_ptr<Game> game);
-
 		void AddCard(std::shared_ptr<Card> card);
+		void AddAcquiredCard(const CardList& acquiredCardList);
 
 		std::shared_ptr<Game> GetGame() const;
 		int GetID() const;
@@ -35,6 +35,7 @@ namespace Mighty
 		int id;
 		std::string name;
 
-		CardList cardList;
+		CardList handCardList;
+		CardList acquiredCardList;
 	};
 }

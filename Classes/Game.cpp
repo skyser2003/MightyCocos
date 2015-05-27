@@ -67,27 +67,18 @@ namespace Mighty
 
 	void Game::PlayCard(std::shared_ptr<Card> card)
 	{
-		if (round == nullptr)
-		{
-			StartNewRound();
-		}
-
 		round->PlayNextCard(card);
+	}
 
-		if (round->IsFinished() == true)
-		{
-			auto winCard = round->GetCurrentWinningCard();
-			auto player = winCard->GetPlayer();
+	void Game::StartNewRound()
+	{
+		round.reset(new Round());
+		round->Init(self);
+	}
 
-			auto cardList = round->GetCurrentRoundCardList();
-			for (const auto& card : cardList)
-			{
-
-			}
-
-			// Destroy round
-			round = nullptr;
-		}
+	bool Game::IsRoundFinished() const
+	{
+		return round->IsFinished();
 	}
 
 	const Game::Players& Game::GetPlayers() const
@@ -100,9 +91,19 @@ namespace Mighty
 		return *rule.get();
 	}
 
+	const Game::CardList& Game::GetCurrentRoundCardList() const
+	{
+		return round->GetCurrentRoundCardList();
+	}
+
 	int Game::GetCurrentRoundCardCount() const
 	{
 		return round == nullptr ? 0 : round->GetCurrentRoundCardList().size();
+	}
+
+	std::shared_ptr<Card> Game::GetWinningCard() const
+	{
+		return round->GetCurrentWinningCard();
 	}
 
 	void Game::DistributeCard()
@@ -129,7 +130,7 @@ namespace Mighty
 			players[i % 5]->AddCard(card);
 		}
 
-		for (int i = 0; i < deck.size(); ++i)
+		for (size_t i = 0; i < deck.size(); ++i)
 		{
 			int index = gen() % deck.size();
 			CardType type = deck[index];
@@ -173,11 +174,5 @@ namespace Mighty
 		}
 		break;
 		}
-	}
-
-	void Game::StartNewRound()
-	{
-		round.reset(new Round());
-		round->Init(self);
 	}
 }

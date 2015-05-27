@@ -2,6 +2,8 @@
 
 namespace Mighty
 {
+	enum class CardType;
+
 	class Game;
 	class Card;
 }
@@ -24,4 +26,5 @@ public:
 private:
 	std::shared_ptr<Mighty::Game> game;
 	float imageScale = 1.0f;
+	std::map<Mighty::CardType, cocos2d::Menu*> cardImageList;
 };
