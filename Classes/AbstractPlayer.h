@@ -2,7 +2,6 @@
 
 namespace Mighty
 {
-	enum CardMessage;
 
 	class Game;
 	class Card;

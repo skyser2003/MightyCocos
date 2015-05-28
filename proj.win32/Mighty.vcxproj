@@ -166,7 +166,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Card.h" />
     <ClInclude Include="..\Classes\CardUtilFunc.h" />
     <ClInclude Include="..\Classes\CardRole.h" />
-    <ClInclude Include="..\Classes\CardMessage.h" />
     <ClInclude Include="..\Classes\CardRank.h" />
     <ClInclude Include="..\Classes\CardSuit.h" />
     <ClInclude Include="..\Classes\CardType.h" />

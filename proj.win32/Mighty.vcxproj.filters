@@ -125,9 +125,6 @@
     <ClInclude Include="..\Classes\CardSuit.h">
       <Filter>Mighty\Card</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CardMessage.h">
-      <Filter>Mighty\Card</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Round.h">
       <Filter>Mighty\Round</Filter>
     </ClInclude>
