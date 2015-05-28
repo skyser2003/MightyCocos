@@ -81,6 +81,11 @@ namespace Mighty
 		return round->IsFinished();
 	}
 
+	bool Game::IsPlayable(std::shared_ptr<Card> card)
+	{
+		return round->IsPlayable(card);
+	}
+
 	const Game::Players& Game::GetPlayers() const
 	{
 		return players;

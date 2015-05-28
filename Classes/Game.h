@@ -24,6 +24,7 @@ namespace Mighty
 		void PlayCard(std::shared_ptr<Card> card);
 		void StartNewRound();
 		bool IsRoundFinished() const;
+		bool IsPlayable(std::shared_ptr<Card> card);
 
 		const Players& GetPlayers() const;
 		const Rule& GetRule() const;

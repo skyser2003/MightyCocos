@@ -6,6 +6,7 @@
 #include "CardUtilFunc.h"
 #include "Card.h"
 #include "CardRole.h"
+#include "AbstractPlayer.h"
 
 USING_NS_CC;
 
@@ -97,9 +98,9 @@ bool GameScene::init()
 			standard.x += visibleSize.width / 3;
 		}
 
-		for (size_t i = 0; i < player->GetCardList().size(); ++i)
+		for (size_t i = 0; i < player->GetHandCardList().size(); ++i)
 		{
-			auto card = player->GetCardList()[i];
+			auto card = player->GetHandCardList()[i];
 			auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(card->GetType()) + ".png";
 
 
@@ -156,6 +157,11 @@ void GameScene::menuCloseCallback(Ref* pSender)
 
 void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::Menu* menu)
 {
+	if (game->IsPlayable(card) == false)
+	{
+		return;
+	}
+
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
 	auto* image = static_cast<cocos2d::MenuItemImage*>(menu->getChildren().at(0));
@@ -172,7 +178,7 @@ void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::M
 		// Logic
 		auto player = game->GetWinningCard()->GetPlayer();
 		const auto& cardList = game->GetCurrentRoundCardList();
-		
+
 		player->AddAcquiredCard(cardList);
 
 		// UI
@@ -182,7 +188,34 @@ void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::M
 			menu->setVisible(false);
 		}
 
+		for (auto pair : cardImageList)
+		{
+			auto* menu = pair.second;
+			menu->setColor(Color3B::WHITE);
+		}
+
 		// Begin next round
 		game->StartNewRound();
+	}
+	else
+	{
+		// UI
+		for (auto pair : game->GetPlayers())
+		{
+			auto player = pair.second;
+			for (auto card : player->GetHandCardList())
+			{
+				auto* menu = cardImageList[card->GetType()];
+
+				if (game->IsPlayable(card) == true)
+				{
+					menu->setColor(Color3B::WHITE);
+				}
+				else
+				{
+					menu->setColor(Color3B::GRAY);
+				}
+			}
+		}
 	}
 }

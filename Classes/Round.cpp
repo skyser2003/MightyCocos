@@ -8,6 +8,7 @@
 #include "JokerCallRole.h"
 #include "Game.h"
 #include "Rule.h"
+#include "AbstractPlayer.h"
 
 namespace Mighty
 {
@@ -137,6 +138,7 @@ namespace Mighty
 		}
 
 		cardList.push_back(nextCard);
+		nextCard->GetPlayer()->RemoveFromHand(nextCard);
 		currentWinningCard = CalculateWinningCard(mainSuit, cardList);
 	}
 
@@ -144,6 +146,58 @@ namespace Mighty
 	{
 		auto sharedGame = game.lock();
 		return cardList.size() == sharedGame->GetRule().GetPlayerCount();
+	}
+
+	bool Round::IsPlayable(std::shared_ptr<Card> nextCard) const
+	{
+		if (cardList.size() == 0)
+		{
+			return true;
+		}
+
+		// One card per player per turn
+		for (const auto& card : cardList)
+		{
+			if (card->GetPlayer() == nextCard->GetPlayer())
+			{
+				return false;
+			}
+		}
+
+		// You can always play Mighty.
+		if (nextCard->GetRoleType() == CardRole::Mighty)
+		{
+			return true;
+		}
+
+		// If joker call is activated and user has joker,
+		// user must play joker.
+		auto jokerCallCard = GetCard(cardList, CardRole::JokerCall);
+		if (jokerCallCard != nullptr)
+		{
+			auto* jokerCallRole = static_cast<JokerCallRole*>(jokerCallCard->GetRole());
+			if (jokerCallRole->IsActivated() == true)
+			{
+				auto player = nextCard->GetPlayer();
+				if (player->GetMatchingCardList(CardRole::Joker).size() != 0)
+				{
+					return false;
+				}
+			}
+		}
+
+		// If next card is not joker and user has at least one card matching main suit,
+		// user must play that card
+		if (nextCard->GetRoleType() != CardRole::Joker && mainSuit != nextCard->GetSuit())
+		{
+			auto player = nextCard->GetPlayer();
+			if (player->GetMatchingCardList(mainSuit).size() != 0)
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	std::shared_ptr<Card> Round::GetCurrentWinningCard() const
@@ -154,5 +208,10 @@ namespace Mighty
 	const Round::CardList& Round::GetCurrentRoundCardList() const
 	{
 		return cardList;
+	}
+
+	CardSuit Round::GetMainSuit() const
+	{
+		return mainSuit;
 	}
 }
