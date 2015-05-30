@@ -149,6 +149,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\HumanPlayer.cpp" />
     <ClCompile Include="..\Classes\JokerCallRole.cpp" />
     <ClCompile Include="..\Classes\JokerRole.cpp" />
+    <ClCompile Include="..\Classes\MainMenuScene.cpp" />
     <ClCompile Include="..\Classes\MightyRole.cpp" />
     <ClCompile Include="..\Classes\NormalRole.cpp" />
     <ClCompile Include="..\Classes\Round.cpp" />
@@ -174,6 +175,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\AbstractPlayer.h" />
     <ClInclude Include="..\Classes\JokerCallRole.h" />
     <ClInclude Include="..\Classes\JokerRole.h" />
+    <ClInclude Include="..\Classes\MainMenuScene.h" />
     <ClInclude Include="..\Classes\MightyRole.h" />
     <ClInclude Include="..\Classes\NormalRole.h" />
     <ClInclude Include="..\Classes\Round.h" />

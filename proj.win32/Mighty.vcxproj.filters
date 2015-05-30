@@ -93,6 +93,9 @@
     <ClCompile Include="..\Classes\Rule.cpp">
       <Filter>Mighty\Rule</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainMenuScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Rule.h">
       <Filter>Mighty\Rule</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainMenuScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
