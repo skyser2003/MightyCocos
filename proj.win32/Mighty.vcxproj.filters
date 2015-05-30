@@ -51,9 +51,6 @@
     <ClCompile Include="..\Classes\stdafx.cpp">
       <Filter>PCH</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Card.cpp">
       <Filter>Mighty\Card</Filter>
     </ClCompile>
@@ -106,9 +103,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\stdafx.h">
       <Filter>PCH</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Card.h">
       <Filter>Mighty\Card</Filter>
