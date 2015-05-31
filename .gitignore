@@ -35,5 +35,8 @@
 *.ipch
 
 # cocos2d-x
-**/Debug.win32
-**/Release.win32
+**/Debug.win32/*
+**/Release.win32/*
+**/Debug/*
+**/Release/*
+**/Generated Files/*
