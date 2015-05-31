@@ -33,11 +33,7 @@ bool MainMenuScene::init()
 	auto label = Label::createWithTTF("START GAME", "fonts/Marker Felt.ttf", 24);
 	auto labelMenu = MenuItemLabel::create(label);
 
-	labelMenu->setCallback([this](Ref* ref)
-	{
-		auto gameScene = GameScene::createScene();
-		Director::getInstance()->pushScene(gameScene);
-	});
+	labelMenu->setCallback(CC_CALLBACK_1(MainMenuScene::StartGameCallback, this));
 
 	auto menu = Menu::create();
 	menu->addChild(labelMenu);
@@ -48,4 +44,10 @@ bool MainMenuScene::init()
 	addChild(menu);
 
 	return true;
+}
+
+void MainMenuScene::StartGameCallback(Ref* ref)
+{
+	auto gameScene = GameScene::createScene();
+	Director::getInstance()->pushScene(gameScene);
 }
