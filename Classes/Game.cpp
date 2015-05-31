@@ -40,8 +40,11 @@ namespace Mighty
 		// Test
 		for (int i = 0; i < rule->GetPlayerCount(); ++i)
 		{
+			char name[25];
+			sprintf_s(name, "boo%d", i);
+
 			auto* human = new HumanPlayer();
-			human->Init(i, "boo" + i);
+			human->Init(i, name);
 			auto player = std::shared_ptr<AbstractPlayer>(human);
 
 			AddPlayer(player);
