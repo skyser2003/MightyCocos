@@ -16,8 +16,24 @@
     <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\AbstractPlayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\AbstractRole.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Card.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\CardRank.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\CardRole.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\CardUtilFunc.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Game.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\GameScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\HumanPlayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\JokerCallRole.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\JokerRole.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\MainMenuScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\MightyRole.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\NormalRole.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Round.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\Rule.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\Classes\stdafx.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)App.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClCompile>
@@ -26,9 +42,26 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml.cpp">
       <DependentUpon>$(MSBuildThisFileDirectory)OpenGLESPage.xaml</DependentUpon>
     </ClCompile>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\AbstractPlayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\AbstractRole.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\AppDelegate.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\AppMacros.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Card.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\CardRank.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\CardRole.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\CardSuit.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\CardType.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\CardUtilFunc.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Game.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\GameScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\HumanPlayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\JokerCallRole.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\JokerRole.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\MainMenuScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\MightyRole.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\NormalRole.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Round.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\Rule.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\stdafx.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)App.xaml.h">
       <DependentUpon>$(MSBuildThisFileDirectory)App.xaml</DependentUpon>
     </ClInclude>
