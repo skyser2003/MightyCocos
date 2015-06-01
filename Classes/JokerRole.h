@@ -4,7 +4,7 @@
 
 namespace Mighty
 {
-	enum class CardSuit;
+	#include "enum_class_CardSuit.h"
 
 	class JokerRole final : public CRTPRole<JokerRole>
 	{

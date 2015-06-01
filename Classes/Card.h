@@ -2,8 +2,8 @@
 
 namespace Mighty
 {
-	enum class CardType;
-	enum class CardSuit;
+	#include "enum_class_CardType.h"
+	#include "enum_class_CardSuit.h"
 	enum class CardRank;
 	enum class CardRole;
 

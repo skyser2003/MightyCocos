@@ -14,9 +14,6 @@
 
 namespace Mighty
 {
-	enum class CardSuit;
-	enum class CardRank;
-
 	Game::Game()
 	{
 

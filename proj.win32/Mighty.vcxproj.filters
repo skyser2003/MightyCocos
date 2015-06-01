@@ -37,6 +37,9 @@
     <Filter Include="Mighty\Rule">
       <UniqueIdentifier>{223944e2-957f-41ca-a779-31fcaa74d533}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mighty\Macro">
+      <UniqueIdentifier>{a4d71782-d7a1-428a-afc0-e793ff2c626e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -157,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainMenuScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enum_class_CardSuit.h">
+      <Filter>Mighty\Macro</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enum_class_CardType.h">
+      <Filter>Mighty\Macro</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

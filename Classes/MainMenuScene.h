@@ -2,7 +2,7 @@
 
 namespace Mighty
 {
-	enum class CardType;
+	#include "enum_class_CardType.h"
 
 	class Game;
 	class Card;
