@@ -11,13 +11,16 @@ namespace Mighty
 		Rule();
 
 		void SetPlayerCount(int count);
-		void SetCardType(CardRole role, CardType type);
+		void SetCardTypeForRole(CardRole role, CardType type);
 
 		int GetPlayerCount() const;
-		CardType GetCardType(CardRole role) const;
+		CardType GetCardTypeForRole(CardRole role) const;
+		CardRole GetCardRoleForType(CardType type) const;
+		bool ExistsCardRoleForType(CardType type) const;
 
 	private:
 		int playerCount;
 		std::map<CardRole, CardType> cardTypePerRole;
+		std::map<CardType, CardRole> cardRolePerType;
 	};
 }

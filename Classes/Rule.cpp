@@ -13,9 +13,10 @@ namespace Mighty
 		this->playerCount = count;
 	}
 
-	void Rule::SetCardType(CardRole role, CardType type)
+	void Rule::SetCardTypeForRole(CardRole role, CardType type)
 	{
 		cardTypePerRole[role] = type;
+		cardRolePerType[type] = role;
 	}
 	
 	int Rule::GetPlayerCount() const
@@ -23,9 +24,20 @@ namespace Mighty
 		return playerCount;
 	}	
 
-	CardType Rule::GetCardType(CardRole role) const
+	CardType Rule::GetCardTypeForRole(CardRole role) const
 	{
 		auto it = cardTypePerRole.find(role);
 		return it->second;
+	}
+
+	CardRole Rule::GetCardRoleForType(CardType type) const
+	{
+		auto it = cardRolePerType.find(type);
+		return it->second;
+	}
+
+	bool Rule::ExistsCardRoleForType(CardType type) const
+	{
+		return cardRolePerType.count(type) != 0;
 	}
 }

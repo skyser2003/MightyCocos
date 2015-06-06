@@ -31,6 +31,10 @@ namespace Mighty
 		rule.reset(new Rule());
 		rule->SetPlayerCount(5);
 
+		rule->SetCardTypeForRole(CardRole::Mighty, CardType::SA);
+		rule->SetCardTypeForRole(CardRole::Joker, CardType::JB);
+		rule->SetCardTypeForRole(CardRole::JokerCall, CardType::C3);
+
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch());
 		gen.seed(ms.count());
 
@@ -152,32 +156,33 @@ namespace Mighty
 
 	void Game::ApplyRole(Card* card)
 	{
-		switch (card->GetType())
-		{
-		case CardType::SA:
-		{
-			card->SetRole(new MightyRole());
-		}
-		break;
-
-		case CardType::JC:
-		case CardType::JB:
-		{
-			card->SetRole(new JokerRole());
-		}
-		break;
-
-		case CardType::C3:
-		{
-			card->SetRole(new JokerCallRole());
-		}
-		break;
-
-		default:
+		if (rule->ExistsCardRoleForType(card->GetType()) == false)
 		{
 			card->SetRole(new NormalRole());
 		}
-		break;
+		else
+		{
+			auto role = rule->GetCardRoleForType(card->GetType());
+			switch (role)
+			{
+			case CardRole::Mighty:
+			{
+				card->SetRole(new MightyRole());
+			}
+			break;
+
+			case CardRole::Joker:
+			{
+				card->SetRole(new JokerRole());
+			}
+			break;
+
+			case CardRole::JokerCall:
+			{
+				card->SetRole(new JokerCallRole());
+			}
+			break;
+			}
 		}
 	}
 }
