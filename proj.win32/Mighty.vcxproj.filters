@@ -167,6 +167,9 @@
     <ClInclude Include="..\Classes\enum_class_CardType.h">
       <Filter>Mighty\Macro</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\enum_class_CardRole.h">
+      <Filter>Mighty\Macro</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
