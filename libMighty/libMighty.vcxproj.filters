@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Card">
+      <UniqueIdentifier>{07745682-2d93-4f37-be50-a1d166426345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{a866ac67-00e4-48d9-acac-80344ce28ee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Macro">
+      <UniqueIdentifier>{3c411daa-fec6-4baf-a5a7-521183f82962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{9d0d0835-ba7f-4138-9c41-ed7e3084e681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Round">
+      <UniqueIdentifier>{30b07cd6-01ed-4b49-8f6e-83f55beac188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rule">
+      <UniqueIdentifier>{b2559f46-08be-4f09-8cf9-fcf75fe61dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Role">
+      <UniqueIdentifier>{b61b52cd-0611-4d13-b4e0-1a655031dc03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{b3992e3c-048a-4c70-86b3-ec30b5bfe118}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractRole.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Card.cpp">
+      <Filter>Card</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CardRank.cpp">
+      <Filter>Card</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CardRole.cpp">
+      <Filter>Card</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CardUtilFunc.cpp">
+      <Filter>Card</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JokerCallRole.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JokerRole.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MightyRole.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NormalRole.cpp">
+      <Filter>Role</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractPlayer.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HumanPlayer.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Round.cpp">
+      <Filter>Round</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rule.cpp">
+      <Filter>Rule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>PCH</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractRole.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Card.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CardRank.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CardRole.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CardSuit.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CardType.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CardUtilFunc.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enum_class_CardRole.h">
+      <Filter>Macro</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enum_class_CardSuit.h">
+      <Filter>Macro</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enum_class_CardType.h">
+      <Filter>Macro</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JokerCallRole.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JokerRole.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MightyRole.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NormalRole.h">
+      <Filter>Role</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractPlayer.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HumanPlayer.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Round.h">
+      <Filter>Round</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rule.h">
+      <Filter>Rule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
