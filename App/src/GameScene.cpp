@@ -103,7 +103,6 @@ bool GameScene::init()
 			auto card = player->GetHandCardList()[i];
 			auto cardImageDir = "card_images/" + Mighty::Util::GetCardResourceName(card->GetType()) + ".png";
 
-
 			auto cardImage = MenuItemImage::create(
 				cardImageDir,
 				"CloseSelected.png");

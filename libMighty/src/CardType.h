@@ -1,5 +1,7 @@
 #pragma once
 
+#include "EnumEnumerator.h"
+
 namespace Mighty
 {
 	enum class CardType
@@ -68,4 +70,7 @@ namespace Mighty
 		JB, // Black(Monotone)
 		JC  // Color
 	};
+
+	// Enumerator
+	typedef EnumEnumerator<CardType, CardType::C2, CardType::JC> CardTypes;
 }

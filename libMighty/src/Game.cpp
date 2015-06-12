@@ -120,9 +120,14 @@ namespace Mighty
 		// 53 Cards total : 4 suits * 13 ranks + 1 Joker
 		std::deque<CardType> deck;
 
-		for (CardType i = CardType::C2; i <= CardType::JB; i = static_cast<CardType>(static_cast<int>(i)+1))
+		for (auto type : CardTypes())
 		{
-			deck.push_back(i);
+			if (type == CardType::JC)
+			{
+				continue;
+			}
+
+			deck.push_back(type);
 		}
 
 		// Distribute 10 cards to each player, leave 3 cards for latter use.
