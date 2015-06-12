@@ -22,4 +22,5 @@ public:
 
 private:
 	void StartGameCallback(Ref* ref);
+	void OptionCallback(Ref* ref);
 };

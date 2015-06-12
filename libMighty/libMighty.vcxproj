@@ -39,6 +39,7 @@
     <ClInclude Include="src\CardSuit.h" />
     <ClInclude Include="src\CardType.h" />
     <ClInclude Include="src\CardUtilFunc.h" />
+    <ClInclude Include="src\EnumEnumerator.h" />
     <ClInclude Include="src\enum_class_CardRole.h" />
     <ClInclude Include="src\enum_class_CardSuit.h" />
     <ClInclude Include="src\enum_class_CardType.h" />

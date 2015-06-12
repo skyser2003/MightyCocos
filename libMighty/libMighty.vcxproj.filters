@@ -25,6 +25,9 @@
     <Filter Include="PCH">
       <UniqueIdentifier>{b3992e3c-048a-4c70-86b3-ec30b5bfe118}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Extern">
+      <UniqueIdentifier>{b1963316-eddb-4f3e-98c7-ba7ee677a960}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AbstractRole.cpp">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="src\stdafx.h">
       <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnumEnumerator.h">
+      <Filter>Extern</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
