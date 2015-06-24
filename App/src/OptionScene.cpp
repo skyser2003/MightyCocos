@@ -30,9 +30,9 @@ bool OptionScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
-	ShowCardList(this, [](Mighty::CardType type)
+	ShowCardList(this, [this](Menu* menu, Mighty::CardType type)
 	{
-
+		removeChild(menu);
 	});
 
 	return true;

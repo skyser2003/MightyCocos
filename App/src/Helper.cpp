@@ -6,7 +6,7 @@
 
 USING_NS_CC;
 
-void ShowCardList(cocos2d::Node* parent, std::function<void(Mighty::CardType)> clickCallback)
+void ShowCardList(cocos2d::Node* parent, std::function<void(Menu*, Mighty::CardType)> clickCallback)
 {
 	std::vector<Mighty::CardType> deck;
 
@@ -47,7 +47,7 @@ void ShowCardList(cocos2d::Node* parent, std::function<void(Mighty::CardType)> c
 		cardHeight = cardScale * size.height;
 	}
 
-	for (int i = 0; i < deck.size(); ++i)
+	for (size_t i = 0; i < deck.size(); ++i)
 	{
 		auto type = deck[i];
 
@@ -64,9 +64,9 @@ void ShowCardList(cocos2d::Node* parent, std::function<void(Mighty::CardType)> c
 			offset.y + (cardHeight + verticalPadding) * (i / cardPerColumn) + cardHeight / 2
 			);
 		cardImage->setScale(cardScale);
-		cardImage->setCallback([clickCallback, type](Ref* ref)
+		cardImage->setCallback([clickCallback, menu, type](Ref* ref)
 		{
-			clickCallback(type);
+			clickCallback(menu, type);
 		});
 
 		menu->addChild(cardImage, 2);
