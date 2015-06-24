@@ -139,6 +139,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClCompile Include="..\App\src\AppDelegate.cpp" />
     <ClCompile Include="..\App\src\GameScene.cpp" />
+    <ClCompile Include="..\App\src\Helper.cpp" />
     <ClCompile Include="..\App\src\MainMenuScene.cpp" />
     <ClCompile Include="..\App\src\OptionScene.cpp" />
     <ClCompile Include="..\App\src\stdafx.cpp">
@@ -150,6 +151,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
   <ItemGroup>
     <ClInclude Include="..\App\src\AppDelegate.h" />
     <ClInclude Include="..\App\src\GameScene.h" />
+    <ClInclude Include="..\App\src\Helper.h" />
     <ClInclude Include="..\App\src\MainMenuScene.h" />
     <ClInclude Include="..\App\src\OptionScene.h" />
     <ClInclude Include="..\App\src\stdafx.h" />

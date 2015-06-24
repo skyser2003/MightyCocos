@@ -16,6 +16,9 @@
     <Filter Include="Main">
       <UniqueIdentifier>{9998bbae-571e-4da4-acc6-44afebaae284}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Helper">
+      <UniqueIdentifier>{7b58fe57-8683-4250-a512-669b7cd32c87}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\App\src\stdafx.cpp">
@@ -36,6 +39,9 @@
     <ClCompile Include="..\App\src\OptionScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\App\src\Helper.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App\src\stdafx.h">
@@ -52,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="..\App\src\OptionScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\App\src\Helper.h">
+      <Filter>Helper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

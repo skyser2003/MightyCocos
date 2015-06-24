@@ -8,8 +8,4 @@ public:
 	virtual bool init();
 
 	CREATE_FUNC(OptionScene);
-
-private:
-	void ShowCardList();
-
 };
