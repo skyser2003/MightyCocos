@@ -4,6 +4,8 @@
 #include "GameScene.h"
 #include "OptionScene.h"
 
+#include "Helper.h"
+
 USING_NS_CC;
 
 Scene* MainMenuScene::createScene()
@@ -30,31 +32,17 @@ bool MainMenuScene::init()
 
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size visibleSize = Director::getInstance()->getVisibleSize();
+	auto label = Label::createWithTTF("TEST", "fonts/Marker Felt.ttf", 24);
 
 	// Game start button
-	auto label = Label::createWithTTF("START GAME", "fonts/Marker Felt.ttf", 24);
-	auto labelMenu = MenuItemLabel::create(label);
-	labelMenu->setCallback(CC_CALLBACK_1(MainMenuScene::StartGameCallback, this));
-
-	auto menu = Menu::create();
-	menu->addChild(labelMenu);
-
-	menu->setPosition(Vec2(origin.x + visibleSize.width / 2,
-		origin.y + visibleSize.height / 2 - label->getContentSize().height));
+	CreateLabel(this, Vec2(origin.x + visibleSize.width / 2,
+		origin.y + visibleSize.height / 2 - label->getContentSize().height),
+		"START GAME", "fonts/Marker Felt.ttf", 24, CC_CALLBACK_1(MainMenuScene::StartGameCallback, this));
 
 	// Option button
-	auto label2 = Label::createWithTTF("OPTION", "fonts/Marker Felt.ttf", 24);
-	auto labelMenu2 = MenuItemLabel::create(label2);
-	labelMenu2->setCallback(CC_CALLBACK_1(MainMenuScene::OptionCallback, this));
-
-	auto menu2 = Menu::create();
-	menu2->addChild(labelMenu2);
-
-	menu2->setPosition(Vec2(origin.x + visibleSize.width / 2,
-		origin.y + visibleSize.height / 2 - label->getContentSize().height * 2));
-
-	addChild(menu);
-	addChild(menu2);
+	CreateLabel(this, Vec2(origin.x + visibleSize.width / 2,
+		origin.y + visibleSize.height / 2 - label->getContentSize().height * 2),
+		"OPTION", "fonts/Marker Felt.ttf", 24, CC_CALLBACK_1(MainMenuScene::OptionCallback, this));
 
 	return true;
 }

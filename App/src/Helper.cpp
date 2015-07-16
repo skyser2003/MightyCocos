@@ -77,3 +77,20 @@ void ShowCardList(cocos2d::Node* parent, std::function<void(Menu*, Mighty::CardT
 
 	parent->addChild(menu);
 }
+
+void CreateLabel(cocos2d::Node* parent, cocos2d::Vec2 position, const std::string& text, const std::string& font, int fontSize, std::function<void(cocos2d::Menu*)> clickCallback)
+{
+	auto label = Label::createWithTTF(text, font, 24);
+	auto labelMenu = MenuItemLabel::create(label);
+
+	auto menu = Menu::create();
+	menu->addChild(labelMenu);
+	menu->setPosition(position);
+
+	labelMenu->setCallback([clickCallback, menu](Ref* ref)
+	{
+		clickCallback(menu);
+	});
+
+	parent->addChild(menu);
+}
