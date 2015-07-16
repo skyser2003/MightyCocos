@@ -36,7 +36,7 @@ namespace Mighty
 		rule->SetCardTypeForRole(CardRole::JokerCall, CardType::C3);
 
 		auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now().time_since_epoch());
-		gen.seed(ms.count());
+		gen.seed(static_cast<unsigned long>(ms.count()));
 
 		// Test
 		for (int i = 0; i < rule->GetPlayerCount(); ++i)
