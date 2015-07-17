@@ -30,10 +30,20 @@ bool OptionScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
-	ShowCardList(this, [this](Menu* menu, Mighty::CardType type)
+	auto label = Label::createWithTTF("TEST", "fonts/Marker Felt.ttf", 24);
+
+	CreateLabel(this, Vec2(origin.x + visibleSize.width / 2,
+		origin.y + visibleSize.height / 2 - label->getContentSize().height),
+		"MIGHTY", "fonts/Marker Felt.ttf", 24, [this](Menu* menu)
 	{
-		removeChild(menu);
+		ShowCardList(this, [this](Menu* menu, Mighty::CardType type)
+		{
+			// Set mighty card type in config
+			removeChild(menu);
+		});
 	});
+
+	// TODO : create option menu for other functional cards, e.g. joker, joker call
 
 	return true;
 }
