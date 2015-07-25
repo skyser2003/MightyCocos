@@ -1,51 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="App">
+      <UniqueIdentifier>{1baa6b9f-87e3-42c0-9d9f-7fbb6f4ef5cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helper">
+      <UniqueIdentifier>{f89aa9d1-21bd-4030-ab6a-224817d8bd03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{fb071cef-0015-4604-9fa7-d753e56f4346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{1ac6bbd1-2d88-404d-b9e0-26a672350c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{6b153ee4-8915-481d-863b-f15181458c00}</UniqueIdentifier>
+    </Filter>
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PCH">
-      <UniqueIdentifier>{002ae4a8-200d-49ce-85d0-d3988f52e42a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{f1da3395-b8ec-455b-b74c-092654911c0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="App">
-      <UniqueIdentifier>{9b2ed3f7-717c-4639-a8ab-9379124e672e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{9998bbae-571e-4da4-acc6-44afebaae284}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Helper">
-      <UniqueIdentifier>{7b58fe57-8683-4250-a512-669b7cd32c87}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\App\src\stdafx.cpp">
-      <Filter>PCH</Filter>
-    </ClCompile>
-    <ClCompile Include="..\App\src\MainMenuScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\App\src\GameScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="..\App\src\AppDelegate.cpp">
       <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\App\src\OptionScene.cpp">
-      <Filter>Scene</Filter>
+    <ClCompile Include="..\App\src\stdafx.cpp">
+      <Filter>PCH</Filter>
     </ClCompile>
     <ClCompile Include="..\App\src\Helper.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
+    <ClCompile Include="..\App\src\GameScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\App\src\MainMenuScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\App\src\OptionScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\App\src\AppDelegate.h">
+      <Filter>App</Filter>
+    </ClInclude>
     <ClInclude Include="..\App\src\stdafx.h">
       <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="..\App\src\Helper.h">
+      <Filter>Helper</Filter>
     </ClInclude>
     <ClInclude Include="..\App\src\GameScene.h">
       <Filter>Scene</Filter>
@@ -53,14 +59,11 @@
     <ClInclude Include="..\App\src\MainMenuScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\App\src\AppDelegate.h">
-      <Filter>App</Filter>
-    </ClInclude>
     <ClInclude Include="..\App\src\OptionScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\App\src\Helper.h">
-      <Filter>Helper</Filter>
+    <ClInclude Include="main.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

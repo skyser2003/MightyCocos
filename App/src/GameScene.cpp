@@ -35,6 +35,8 @@ bool GameScene::init()
 		return false;
 	}
 
+	scale = 1.0f;// / Director::getInstance()->getContentScaleFactor();
+
 	// Init game
 	game.reset(new Mighty::Game());
 	game->Init(game);
@@ -42,7 +44,6 @@ bool GameScene::init()
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-	imageScale = 0.7f;
 
 	for (const auto& pair : game->GetPlayers())
 	{
@@ -107,9 +108,9 @@ bool GameScene::init()
 				cardImageDir,
 				"CloseSelected.png");
 
-			cardImage->setPosition(Vec2(standard.x + direction.x * (i + 0.5f) * imageScale * cardImage->getContentSize().width,
-				standard.y + direction.y * cardImage->getContentSize().height / 2 * imageScale));
-			cardImage->setScale(imageScale);
+			cardImage->setPosition(Vec2(standard.x + direction.x * (i + 0.5f) * scale * cardImage->getContentSize().width,
+				standard.y + direction.y * cardImage->getContentSize().height / 2 * scale));
+			cardImage->setScale(scale);
 
 			// create menu, it's an autorelease object
 			auto menu = Menu::create(cardImage, NULL);
@@ -133,7 +134,7 @@ bool GameScene::init()
 	// add a label shows "Hello World"
 	// create and initialize a label
 
-	auto label = Label::createWithTTF("Mighty", "fonts/Marker Felt.ttf", 24);
+	auto label = Label::createWithTTF("Mighty", "fonts/Marker Felt.ttf", 24 * scale);
 
 	// position the label on the center of the screen
 	label->setPosition(Vec2(origin.x + visibleSize.width / 2,
@@ -166,7 +167,7 @@ void GameScene::cardClickCallback(std::shared_ptr<Mighty::Card> card, cocos2d::M
 	auto* image = static_cast<cocos2d::MenuItemImage*>(menu->getChildren().at(0));
 	image->setCallback(nullptr);
 	image->setPosition(
-		visibleSize.height / 2.0f + game->GetCurrentRoundCardCount() * image->getContentSize().width * imageScale,
+		visibleSize.height / 2.0f + game->GetCurrentRoundCardCount() * image->getContentSize().width * scale,
 		visibleSize.height / 2.0f
 		);
 

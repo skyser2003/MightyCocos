@@ -24,7 +24,7 @@ public:
 	// implement the "static create()" method manually
 	CREATE_FUNC(GameScene);
 private:
+	float scale;
 	std::shared_ptr<Mighty::Game> game;
-	float imageScale = 1.0f;
 	std::map<Mighty::CardType, cocos2d::Menu*> cardImageList;
 };
