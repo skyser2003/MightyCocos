@@ -175,6 +175,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ProjectReference Include="..\libMighty\libMighty.vcxproj">
       <Project>{88ed02cc-7edc-4ee9-bba4-4ed85eb3084e}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\ligMightyNet\ligMightyNet.vcxproj">
+      <Project>{e3f7d2c4-8f8d-4ea2-bd13-4e42de0f348a}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

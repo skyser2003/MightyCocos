@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "librecast", "..\cocos2d\ext
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libMighty", "..\libMighty\libMighty.vcxproj", "{88ED02CC-7EDC-4EE9-BBA4-4ED85EB3084E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ligMightyNet", "..\ligMightyNet\ligMightyNet.vcxproj", "{E3F7D2C4-8F8D-4EA2-BD13-4E42DE0F348A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -54,6 +56,10 @@ Global
 		{88ED02CC-7EDC-4EE9-BBA4-4ED85EB3084E}.Debug|Win32.Build.0 = Debug|Win32
 		{88ED02CC-7EDC-4EE9-BBA4-4ED85EB3084E}.Release|Win32.ActiveCfg = Release|Win32
 		{88ED02CC-7EDC-4EE9-BBA4-4ED85EB3084E}.Release|Win32.Build.0 = Release|Win32
+		{E3F7D2C4-8F8D-4EA2-BD13-4E42DE0F348A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E3F7D2C4-8F8D-4EA2-BD13-4E42DE0F348A}.Debug|Win32.Build.0 = Debug|Win32
+		{E3F7D2C4-8F8D-4EA2-BD13-4E42DE0F348A}.Release|Win32.ActiveCfg = Release|Win32
+		{E3F7D2C4-8F8D-4EA2-BD13-4E42DE0F348A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
