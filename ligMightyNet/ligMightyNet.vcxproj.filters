@@ -7,15 +7,30 @@
     <Filter Include="Server">
       <UniqueIdentifier>{d79326fd-d49f-4902-a549-168bcd8f1146}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{15206cd3-be6e-4683-a6c9-c7e73f292432}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Client.h">
       <Filter>Client</Filter>
     </ClInclude>
+    <ClInclude Include="src\Server.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Client.cpp">
       <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Server.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>PCH</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
