@@ -10,6 +10,9 @@
     <Filter Include="PCH">
       <UniqueIdentifier>{15206cd3-be6e-4683-a6c9-c7e73f292432}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TCP">
+      <UniqueIdentifier>{b76d0b47-1db1-47a0-a849-ec90601d4ca9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Client.h">
@@ -21,6 +24,9 @@
     <ClInclude Include="src\stdafx.h">
       <Filter>PCH</Filter>
     </ClInclude>
+    <ClInclude Include="src\Tcp.h">
+      <Filter>TCP</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Client.cpp">
@@ -31,6 +37,9 @@
     </ClCompile>
     <ClCompile Include="src\stdafx.cpp">
       <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tcp.cpp">
+      <Filter>TCP</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

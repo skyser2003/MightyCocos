@@ -79,6 +79,7 @@
     <ClInclude Include="src\Client.h" />
     <ClInclude Include="src\Server.h" />
     <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\Tcp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Client.cpp" />
@@ -87,6 +88,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Tcp.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
